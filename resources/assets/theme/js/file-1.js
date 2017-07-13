@@ -1,0 +1,1 @@
+alert("FILE 1 CONTENTS");
