@@ -17,5 +17,19 @@
     "laravel-mix": "^1.0",
     "lodash": "^4.17.4",
     "vue": "^2.1.10"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^3.1.0",
+    "gulp-inject": "^4.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-outdated": "^0.1.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "path": "^0.12.7",
+    "rimraf": "^2.6.1",
+    "through2": "^2.0.3",
+    "vue-carousel-3d": "^0.1.18"
   }
 }
