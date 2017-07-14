@@ -42,6 +42,7 @@ class MentorController extends Controller
             'email'=>$request->input('email'),
             'position' =>$request->input('position')
         ]);
+         return redirect()->route('mentor.list');
     }
 
     /**

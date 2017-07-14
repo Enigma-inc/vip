@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->group(function () {
+//Route::prefix('admin')->group(function () {
     Route::get('mentors',[
         'uses'=>'MentorController@index',
         'as'=>'mentor.list'
@@ -36,7 +36,11 @@ Route::prefix('admin')->group(function () {
         'uses'=>'MentorController@update',
         'as'=>'mentor.update'
     ]);
-});
+    Route::get('startups',[
+        'uses' => 'StartupController@index',
+        'as' => 'startup.list'
+    ]);
+//});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

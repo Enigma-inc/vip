@@ -102,7 +102,7 @@
                 <li><a href="./">Home</a></li>
                 <li><a href="./about">About</a></li>
                 <li><a href="/mentors">Mentors</a></li>
-                <li><a href="./Startups">Startups</a></li>
+                <li><a href="./startups">Startups</a></li>
             </ul>
         </div>
         <!-- /.container -->
