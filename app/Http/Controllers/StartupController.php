@@ -16,7 +16,7 @@ class StartupController extends Controller
 
     function __construct()
     {
-        $this->disk = Storage::disk(env('FILE_SYSTEM', 's3'));
+        $this->disk = Storage::disk(env('FILE_SYSTEM', 'local'));
     }
     /**
      * Display a listing of the resource.
@@ -50,8 +50,7 @@ class StartupController extends Controller
     public function store(StartupRequest $request)
     {
         $logo = $request->file('logo');
-        $logoName = str_slug(Carbon::now()->toDayDateTimeString())
-               ."-".$logo->getClientOriginalName();
+        $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
         $logoPath = "startup-logos/".$logoName; 
 
        Startup::create([
@@ -105,6 +104,10 @@ class StartupController extends Controller
         $startup->name=$request->input('name');
         $startup->about=$request->input('about');
         $startup->web_link=$request->input('web_link');
+        $logo = $request->file('logo');
+        $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
+        $logoPath = "startup-logos/".$logoName; 
+        $resizedLogo = $this->resizeLogo($logo, $logoPath);
         $startup->save();
         
         return redirect()->route('startup.list');
@@ -118,9 +121,9 @@ class StartupController extends Controller
      */
     public function destroy($id)
     {
-        $deletedStartup = Startup::find($id);
-        $deletedStartup->delete();
+        $deletedStartup = Startup::find($id)
+                                  ->delete();
+         return redirect()->route('startup.list');
 
-        return redirect()->route('startup.list');
     }
 }

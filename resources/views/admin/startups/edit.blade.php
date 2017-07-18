@@ -6,8 +6,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Mentor</div>
-                <div-- class="panel-body">
-                    {!! Form::model($startup,['method'=>'PATCH','route' => ['startup.update', $startup->id],'class'=>'form-horizontal' ]) !!}
+                <div class="panel-body">
+                    {!! Form::model($startup,['method'=>'PATCH','route' => ['startup.update', $startup->id],'class'=>'form-horizontal','enctype' => 'multipart/form-data' ]) !!}
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                        <!--div class="form-group{{ $errors->has('logo') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('logo') ? ' has-error' : '' }}">
                             <label for="logo" class="col-md-4 control-label">Logo</label>
 
                             <div class="col-md-6">
@@ -49,7 +49,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div-->
+                        </div>
 
                         <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
                             <label for="about" class="col-md-4 control-label">About</label>

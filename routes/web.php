@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-//Route::prefix('admin')->group(function () {
+Route::prefix('admin')->group(function () {
+
+        //Mentors routes
     Route::get('mentors',[
         'uses'=>'MentorController@index',
         'as'=>'mentor.list'
@@ -35,6 +37,8 @@ Route::get('/', function () {
         'uses'=>'MentorController@update',
         'as'=>'mentor.update'
     ]);
+
+        //Startups routes
     Route::get('startups',[
         'uses' => 'StartupController@index',
         'as' => 'startup.list'
@@ -59,7 +63,33 @@ Route::get('/', function () {
         'uses'=>'StartupController@destroy',
         'as'=>'startup.delete'
     ]);
-//});
+    
+        //Slideshows routes
+    Route::get('slideshows',[
+        'uses' => 'SlideshowController@index',
+        'as' => 'slideshow.list'
+    ]);
+    Route::get('slideshows/create',[
+        'uses' => 'SlideshowController@create',
+        'as' => 'slideshow.create'
+    ]);
+    Route::post('slideshows',[
+        'uses' => 'SlideshowController@store',
+        'as' => 'slideshow.store'
+    ]);
+    Route::get('slideshows/{id}/edit', [
+        'uses'=>'SlideshowController@edit',
+        'as'=>'slideshow.edit'
+    ]);
+    Route::patch('slideshows/{slideshow}/edit',[
+        'uses'=>'SlideshowController@update',
+        'as'=>'slideshow.update'
+    ]);
+    Route::post('slideshows/{id}/delete',[
+        'uses' => 'SlideshowController@destroy',
+        'as' => 'slideshow.delete'
+    ]);
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -67,6 +67,7 @@
         </div>
     </div>
 </header>
+
         <!--endinject-->
         <slideshow></slideshow>
         <headsup></headsup>
@@ -94,6 +95,7 @@
         </div>
         <!-- /.container -->
     </div>
+
     <!-- /.primary-footer -->
 
     <div class="secondary-footer dark-bg lighten-3 text-center">
@@ -102,7 +104,7 @@
                 <li><a href="./">Home</a></li>
                 <li><a href="./about">About</a></li>
                 <li><a href="/mentors">Mentors</a></li>
-                <li><a href="./startups">Startups</a></li>
+                <li><a href="{{route('startup.list')}}">Startups</a></li>
             </ul>
         </div>
         <!-- /.container -->
