@@ -18,12 +18,17 @@
                          @foreach($startups as $startup)
                             <tr>
                                 <td>{{$startup->name}}</td>
-                                <td>{{$startup->about}}</td>
-                                <td>{{$startup->web_link}}</td>
-                                <td><a href="{{route('startup.edit',['id'=>$startup->id])}}">Edit</a></td>
+                                <td>
+                                    {{$startup->about}}
+                                    <form action="{{route('startup.delete', $startup->id)}}" method="POST">
+                                        {{csrf_field()}}
+                                        <input type="text" name="file-name" value="{{$startup->id}}" hidden>
+                                        <button type="submit" class="btn btn-warning btn-xs margin-right-5"> <i class="fa fa-trash-o"></i> Remove</button>
+                                    </form>
+                                </td>
+                                <td><a href="{{$startup->web_link}}">{{$startup->web_link}}</a></td>
                             </tr>
-                         @endforeach
-                           
+                         @endforeach                          
                         </tbody>
                     </table>
                 </div>

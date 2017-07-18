@@ -15,7 +15,7 @@ class MentorController extends Controller
      */
     public function index()
     {
-        $mentors=Mentor::all();
+        $mentors = Mentor::all();
         return view('admin.mentors.index')
                  ->with(['mentors'=>$mentors]);
     }
@@ -36,7 +36,7 @@ class MentorController extends Controller
      * @return Response
      */
     public function store(MentorRequest $request)
-    {
+    {        
         Mentor::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),

@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 //Route::prefix('admin')->group(function () {
     Route::get('mentors',[
         'uses'=>'MentorController@index',
@@ -39,6 +38,26 @@ Route::get('/', function () {
     Route::get('startups',[
         'uses' => 'StartupController@index',
         'as' => 'startup.list'
+    ]);
+    Route::get('startups/create', [
+        'uses' => 'StartupController@create',
+        'as' => 'startup.create'
+    ]);
+    Route::post('startups', [
+        'uses' => 'StartupController@store',
+        'as' => 'startup.store'
+    ]);
+    Route::get('startups/{id}/edit',[
+        'uses'=>'StartupController@edit',
+        'as'=>'startup.edit'
+    ]);
+    Route::patch('startups/{startup}/edit',[
+        'uses'=>'StartupController@update',
+        'as'=>'startup.update'
+    ]);
+    Route::post('startups/{id}/delete',[
+        'uses'=>'StartupController@destroy',
+        'as'=>'startup.delete'
     ]);
 //});
 Auth::routes();
