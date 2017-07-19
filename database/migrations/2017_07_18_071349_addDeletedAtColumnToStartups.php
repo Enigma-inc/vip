@@ -27,8 +27,6 @@ class AddDeletedAtColumnToStartups extends Migration
      */
     public function down()
     {
-        Schema::table('startups', function(Blueprint $table){
-            $table->dropColumn('deleted_at');
-        });
+        Schema::dropIfExists('startups');
     }
 }

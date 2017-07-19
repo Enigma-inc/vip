@@ -89,6 +89,12 @@ Route::prefix('admin')->group(function () {
         'uses' => 'SlideshowController@destroy',
         'as' => 'slideshow.delete'
     ]);
+
+        //Partners routes
+    Route::get('partners',[
+        'uses' => 'PartnerController@index',
+        'as' => 'partner.list'
+    ]);
 });
 Auth::routes();
 

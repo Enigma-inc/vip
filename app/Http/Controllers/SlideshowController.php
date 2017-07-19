@@ -19,7 +19,7 @@ class SlideshowController extends Controller
     public function index(){
         $slideshows = Slideshow::all();
         return view('admin.slideshows.index')
-                        ->with(['slideshows' =>$slideshows]);
+               ->with(['slideshows' =>$slideshows]);
     }
 
     public function create(){

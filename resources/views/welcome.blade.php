@@ -52,7 +52,6 @@
                     <li class="active">
                         <a href="{{route('home')}}">Home</a>
                     </li>
-
                     <li>
                         <a href="./about">About</a>
                     </li>
@@ -64,6 +63,9 @@
                     </li>
                     <li>
                         <a href="{{route('slideshow.list')}}">Slideshow</a>
+                    </li>
+                    <li>
+                        <a href="{{route('partner.list')}}">Partners</a>
                     </li>
                 </ul>
             </div>
@@ -104,13 +106,24 @@
     <div class="secondary-footer dark-bg lighten-3 text-center">
         <div class="container">
             <ul>
-                <li><a href="./">Home</a></li>
-                <li><a href="./about">About</a></li>
-                <li><a href="{{route('mentor.list')}}">Mentors</a></li>
-                <li><a href="{{route('startup.list')}}">Startups</a></li>
-                  <li>
-                        <a href="{{route('slideshow.list')}}">Slideshow</a>
-                  </li>
+                <li>
+                    <a href="{{route('home')}}">Home</a>
+                </li>
+                <li>
+                    <a href="./about">About</a>
+                </li>
+                <li>
+                    <a href="{{route('mentor.list')}}">Mentors</a>
+                </li>
+                <li>
+                    <a href="{{route('startup.list')}}">Startups</a>
+                </li>
+                <li>
+                    <a href="{{route('slideshow.list')}}">Slideshow</a>
+                </li>
+                <li>
+                    <a href="{{route('partner.list')}}">Partners</a>
+                </li>
             </ul>
         </div>
         <!-- /.container -->
