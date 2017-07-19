@@ -60,7 +60,10 @@
                         <a href="./mentors">Mentors</a>
                     </li>
                     <li>
-                        <a href="./startups">Startups</a>
+                        <a href="{{route('startup.list')}}">Startups</a>
+                    </li>
+                    <li>
+                        <a href="{{route('slideshow.list')}}">Slideshow</a>
                     </li>
                 </ul>
             </div>
@@ -105,6 +108,9 @@
                 <li><a href="./about">About</a></li>
                 <li><a href="/mentors">Mentors</a></li>
                 <li><a href="{{route('startup.list')}}">Startups</a></li>
+                  <li>
+                        <a href="{{route('slideshow.list')}}">Slideshow</a>
+                  </li>
             </ul>
         </div>
         <!-- /.container -->
