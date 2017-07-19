@@ -106,7 +106,7 @@
             <ul>
                 <li><a href="./">Home</a></li>
                 <li><a href="./about">About</a></li>
-                <li><a href="/mentors">Mentors</a></li>
+                <li><a href="{{route('mentor.list')}}">Mentors</a></li>
                 <li><a href="{{route('startup.list')}}">Startups</a></li>
                   <li>
                         <a href="{{route('slideshow.list')}}">Slideshow</a>
