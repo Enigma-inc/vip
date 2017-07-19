@@ -17,7 +17,7 @@ class MentorController extends Controller
     {
         $mentors = Mentor::all();
         return view('admin.mentors.index')
-                 ->with(['mentors'=>$mentors]);
+               ->with(['mentors'=>$mentors]);
     }
 
     /**

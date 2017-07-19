@@ -95,6 +95,26 @@ Route::prefix('admin')->group(function () {
         'uses' => 'PartnerController@index',
         'as' => 'partner.list'
     ]);
+    Route::get('partners/create',[
+        'uses' => 'PartnerController@create',
+        'as' => 'partner.create'
+    ]);
+    Route::post('partners',[
+        'uses' => 'PartnerController@store',
+        'as' => 'partner.store'
+    ]);
+    Route::get('partners/{id}/edit',[
+        'uses'=> 'PartnerController@edit',
+        'as'=>'partner.edit'
+    ]);
+    Route::patch('partners/{partner}/edit',[
+        'uses' => 'PartnerController@update',
+        'as'=>'partner.update'
+    ]);
+    Route::post('partners/{id}/delete',[
+        'uses' => 'PartnerController@destroy',
+        'as' => 'partner.delete'
+    ]);
 });
 Auth::routes();
 

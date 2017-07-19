@@ -72,6 +72,7 @@ class SlideshowController extends Controller
        $bgImageName = str_slug($request->input('title')).'.'.$bgImage->getClientOriginalExtension();
         $bgImagePath = "slideshow-images/".$bgImageName; 
         $resizedbgImage = $this->resizebgImage($bgImage, $bgImagePath);
+        $slideshow->bgImage_path  = $bgImagePath;
         $slideshow->save();
         
         return redirect()->route('slideshow.list');

@@ -108,6 +108,7 @@ class StartupController extends Controller
         $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
         $logoPath = "startup-logos/".$logoName; 
         $resizedLogo = $this->resizeLogo($logo, $logoPath);
+        $startup->logo_path = $logoPath;
         $startup->save();
         
         return redirect()->route('startup.list');
