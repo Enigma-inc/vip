@@ -29,7 +29,7 @@ class AddDeletedAtColumnToSlideshow extends Migration
     {
         //
         Schema::table('slideshows',function(Blueprint $table){
-            $table->droopColumn('deleted_at');
+            $table->dropColumn('deleted_at');
         });
     }
 }

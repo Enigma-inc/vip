@@ -50,14 +50,14 @@
                 <!--mega menu start-->
                 <ul class="menuzord-menu pull-right light">
                     <li class="active">
-                        <a href="./">Home</a>
+                        <a href="{{route('home')}}">Home</a>
                     </li>
 
                     <li>
                         <a href="./about">About</a>
                     </li>
                     <li>
-                        <a href="./mentors">Mentors</a>
+                        <a href="{{route('mentor.list')}}">Mentors</a>
                     </li>
                     <li>
                         <a href="{{route('startup.list')}}">Startups</a>
