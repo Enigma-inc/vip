@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Add Startup</div>
                 <div class="panel-body">
-                   {!! Form::open(['method' => 'POST', 'route' => 'startup.store', 'class'=>'form-horizontal', 'enctype' => 'multipart/form-data']) !!}
+                   {!! Form::open([ 'class'=>'form-horizontal', 'method' => 'POST', 'route' => 'startup.store','enctype' => 'multipart/form-data']) !!}
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
