@@ -68,7 +68,7 @@ class PartnerController extends Controller
     public function resizeLogo(UploadedFile $logo, $logoPath)
     {
         $logoStream = Image::make($logo)
-                    ->fit(1050, 700)
+                    ->fit(260, 160)
                     ->stream()
                     ->detach();
         $this->disk->put($logoPath, $logoStream, 'public');

@@ -52,7 +52,7 @@ class StartupController extends Controller
         $logo = $request->file('logo');
         $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
         $logoPath = "startup-logos/".$logoName; 
-
+        dd($logo);
        Startup::create([
             'name'=>$request->input('name'),
             'about'=>$request->input('about'),

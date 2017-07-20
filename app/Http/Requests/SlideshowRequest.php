@@ -24,7 +24,10 @@ class SlideshowRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            // 'title' => 'required|max:255',
+            // 'description' => 'required',
+            // 'button_link' => 'required',
+            // 'background_image' => 'required'
         ];
     }
 }

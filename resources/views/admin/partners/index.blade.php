@@ -1,6 +1,6 @@
 @extends('layouts.app') 
 @section('content')
-<div class="container">
+<div class="column-md-12">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
@@ -19,13 +19,12 @@
                          @foreach($partners as $partner)
                             <tr>
                                 <td>{{$partner->name}}</td>
-                                <td>{{$partner->about}}</td>
                                 <td>
                                     <a href="{{$partner->web_link}}">{{$partner->web_link}}</a>
                                 </td>
-                                <!--td>
+                                <td>
                                     <img src="{{Storage::url($partner->logo_path)}}" alt="partner logo">
-                                </td-->
+                                </td>
                                 <td>
                                       <a href="{{route('partner.edit',$partner->id)}}" class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>                                
                                     <form action="{{route('partner.delete',['id'=>$partner->id])}}" method="POST">
