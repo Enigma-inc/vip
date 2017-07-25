@@ -15,6 +15,13 @@ class CreateApplicationSessionsTable extends Migration
     {
         Schema::create('application_sessions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('slug');
+            $table->dateTime('opening_date');
+            $table->dateTime('closing_date');
+            $table->string('slide_image')->nullable();
+            $table->string('slide_title')->nullable();
+            $table->string('slide_text')->nullable();
             $table->timestamps();
         });
     }

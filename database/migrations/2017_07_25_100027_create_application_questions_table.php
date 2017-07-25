@@ -15,7 +15,9 @@ class CreateApplicationQuestionsTable extends Migration
     {
         Schema::create('application_questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->text('question');
+            $table->unsignedInteger('category');
+            $table->integer('index');
         });
     }
 

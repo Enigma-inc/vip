@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionCategoriesTable extends Migration
+class CreateApplicationSessionQuestionPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateQuestionCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('question_categories', function (Blueprint $table) {
+        Schema::create('application_session_application_question', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('index');
+            $table->unsignedInteger('application_session_id');
+            $table->unsignedInteger('application_question_id');
+            $table->timestamps();
         });
+        
     }
 
     /**
@@ -27,6 +29,6 @@ class CreateQuestionCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question_categories');
+         Schema::dropIfExists('application_session_application_question');
     }
 }
