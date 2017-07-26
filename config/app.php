@@ -180,8 +180,8 @@ return [
          /*
          * CUSTOMER PACKAGES
          */
-          Collective\Html\HtmlServiceProvider::class,
-          Intervention\Image\ImageServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 

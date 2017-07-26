@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ApplicationSession;
 use Illuminate\Http\Request;
+use App\Http\Requests\ApplicationSessionRequest;
 
 class ApplicationSessionController extends Controller
 {
@@ -14,7 +15,8 @@ class ApplicationSessionController extends Controller
      */
     public function index()
     {
-        //
+        $sessions=ApplicationSession::all();
+        return view('admin.application-sessions.index')->with(['applicationSessions'=>$sessions]);
     }
 
     /**
@@ -24,7 +26,7 @@ class ApplicationSessionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.application-sessions.create');
     }
 
     /**
@@ -33,9 +35,18 @@ class ApplicationSessionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ApplicationSessionRequest $request)
     {
-        //
+         
+        ApplicationSession::create([
+            'title'=>request('title'),
+            'slug'=>str_slug(request('title')),
+            'opening_date'=>request('opening-date'),
+            'closing_date'=>request('closing-date'),
+            'active'=>request('activate')?true:false,
+        ]);
+
+        return redirect()->route('application.sessions.list');
     }
 
     /**
@@ -57,7 +68,7 @@ class ApplicationSessionController extends Controller
      */
     public function edit(ApplicationSession $applicationSession)
     {
-        //
+        
     }
 
     /**

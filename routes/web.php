@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 Route::prefix('admin')->group(function () {
 
+    //Application Routes
+    Route::get('application-sessions','ApplicationSessionController@index')->name('application.sessions.list');
+    Route::get('application-sessions/create','ApplicationSessionController@create')->name('application.sessions.create');
+    Route::post('application-sessions','ApplicationSessionController@store')->name('application.sessions.store');
+
         //Mentors routes
     Route::get('mentors',[
         'uses'=>'MentorController@index',

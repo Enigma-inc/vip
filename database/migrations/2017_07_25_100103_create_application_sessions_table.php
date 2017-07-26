@@ -22,6 +22,7 @@ class CreateApplicationSessionsTable extends Migration
             $table->string('slide_image')->nullable();
             $table->string('slide_title')->nullable();
             $table->string('slide_text')->nullable();
+            $table->boolean('active')->default(0);
             $table->timestamps();
         });
     }
