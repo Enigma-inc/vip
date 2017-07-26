@@ -16,7 +16,7 @@ class ApplicationSessionController extends Controller
     public function index()
     {
         $sessions=ApplicationSession::all();
-        return view('admin.application-sessions.index')->with(['applicationSessions'=>$sessions]);
+        return view('admin.application-cohorts.index')->with(['applicationSessions'=>$sessions]);
     }
 
     /**
@@ -42,8 +42,7 @@ class ApplicationSessionController extends Controller
             'title'=>request('title'),
             'slug'=>str_slug(request('title')),
             'opening_date'=>request('opening-date'),
-            'closing_date'=>request('closing-date'),
-            'active'=>request('activate')?true:false,
+            'closing_date'=>request('closing-date')
         ]);
 
         return redirect()->route('application.sessions.list');

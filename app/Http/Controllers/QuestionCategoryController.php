@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\QuestionCategory;
 use Illuminate\Http\Request;
+use App\Http\Requests\QuestionCategoryRequest ;
 
 class QuestionCategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class QuestionCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories=QuestionCategory::all();
+        return view('admin.questions.categories.index')->with(['categories'=>$categories]);
     }
 
     /**
@@ -24,7 +26,7 @@ class QuestionCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.questions.categories.create');
     }
 
     /**
@@ -33,9 +35,14 @@ class QuestionCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionCategoryRequest $request)
     {
-        //
+        QuestionCategory::create([
+            'name'=>request('name'),
+            'index'=>request('index')
+        ]);
+
+        return redirect()->route('questions.categories.list');
     }
 
     /**

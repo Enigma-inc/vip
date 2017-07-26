@@ -14,7 +14,8 @@ class ApplicationQuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions=ApplicationQuestion::all();
+        return view('admin.questions.index')->with(['questions'=>$questions]);
     }
 
     /**
@@ -24,7 +25,7 @@ class ApplicationQuestionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.questions.create');
     }
 
     /**

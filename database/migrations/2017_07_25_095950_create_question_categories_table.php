@@ -16,7 +16,7 @@ class CreateQuestionCategoriesTable extends Migration
         Schema::create('question_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('index');
+            $table->float('index')->unique();
         });
     }
 

@@ -17,7 +17,7 @@ class CreateApplicationQuestionsTable extends Migration
             $table->increments('id');
             $table->text('question');
             $table->unsignedInteger('category');
-            $table->integer('index');
+            $table->float('index')->unique();
         });
     }
 
