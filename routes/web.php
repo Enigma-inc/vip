@@ -14,7 +14,25 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::prefix('portal')->group(function(){
+    
+});
 Route::prefix('admin')->group(function () {
+
+    //Application Routes
+    Route::get('application-sessions','ApplicationSessionController@index')->name('application.sessions.list');
+    Route::get('application-sessions/create','ApplicationSessionController@create')->name('application.sessions.create');
+    Route::post('application-sessions','ApplicationSessionController@store')->name('application.sessions.store');
+
+    //Application Questions Categories
+    Route::get('question-categories','QuestionCategoryController@index')->name('questions.categories.list');
+    Route::get('question-categories/create','QuestionCategoryController@create')->name('questions.categories.create');
+    Route::post('question-categories','QuestionCategoryController@store')->name('questions.categories.store');
+
+    //Application Questions
+
+    Route::get('questions','ApplicationQuestionController@index')->name('questions.list');    
+    Route::get('questions/create','ApplicationQuestionController@create')->name('questions.create');    
 
         //Mentors routes
     Route::get('mentors',[
