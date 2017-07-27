@@ -9417,3 +9417,18 @@ input[type="checkbox"]:disabled:checked:after,
   background-color: #953794;
 }
 
+div.required label:after {
+  content: "*";
+  color: red;
+  font-size: 25px;
+}
+
+.button-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+

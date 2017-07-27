@@ -21,7 +21,7 @@
                         </div>
 
                         
-                        <div class="form-group{{ $errors->has('opening-date') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('opening-date') ? ' has-error' : '' }} required">
                             <label for="opening-date" class="col-md-4 control-label">Active From</label>
 
                             <div class="col-md-6">
@@ -33,7 +33,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('closing-date') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('closing-date') ? ' has-error' : '' }} required">
                             <label for="closing-date" class="col-md-4 control-label">Closing Date</label>
 
                             <div class="col-md-6">

@@ -132,6 +132,14 @@ class ApplicationSessionController extends Controller
         return redirect()->route('application.sessions.list');
     }
     
+    public function activate($id)
+    {
+        $activatedSession = ApplicationSession::find($id);
+        $activatedSession->active =1;
+        $activatedSession->save();
+
+        return redirect()->route('application.sessions.list');
+    }
 
     /**
      * Remove the specified resource from storage.
