@@ -5,9 +5,19 @@ namespace App\Http\Controllers;
 use App\ApplicationSession;
 use Illuminate\Http\Request;
 use App\Http\Requests\ApplicationSessionRequest;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Illuminate\Support\Facades\Input;
 
 class ApplicationSessionController extends Controller
 {
+   protected $disk;
+
+    function __construct()
+    {
+        $this->disk = Storage::disk(env('FILE_SYSTEM', 'local'));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +25,8 @@ class ApplicationSessionController extends Controller
      */
     public function index()
     {
-        $sessions=ApplicationSession::all();
+        // $sessions=ApplicationSession::where('active',1)->get();
+        $sessions = ApplicationSession::all();
         return view('admin.application-cohorts.index')->with(['applicationSessions'=>$sessions]);
     }
 
@@ -26,7 +37,7 @@ class ApplicationSessionController extends Controller
      */
     public function create()
     {
-        return view('admin.application-sessions.create');
+        return view('admin.application-cohorts.create');
     }
 
     /**
@@ -37,15 +48,33 @@ class ApplicationSessionController extends Controller
      */
     public function store(ApplicationSessionRequest $request)
     {
-         
+        $active = Input::has('active') ?true : false;
+        $slideImage = $request->file('slide_image');
+        $slideImageName = str_slug($request->input('slide_title')).'.'.$slideImage->getClientOriginalExtension();
+        $slideImagePath = "slide-images/".$slideImageName; 
         ApplicationSession::create([
             'title'=>request('title'),
             'slug'=>str_slug(request('title')),
+            'slide_title'=>request('slide_title'),
+            'slide_text' => request('slide_text'),
             'opening_date'=>request('opening-date'),
-            'closing_date'=>request('closing-date')
+            'closing_date'=>request('closing-date'),
+            'slide_image_path'=>$slideImagePath,
+            'active'=>$active
         ]);
 
+        $resisedSlideImage  = $this -> resizeSlideImage($slideImage,$slideImagePath);
         return redirect()->route('application.sessions.list');
+    }
+
+
+    public function resizeSlideImage(UploadedFile $slideImage, $slideImagePath){
+        $slideImageStream = Image::make($slideImage)
+                    ->fit(1400, 500)
+                    ->stream()
+                    ->detach();
+        $this->disk->put($slideImagePath, $slideImageStream, 'public');
+
     }
 
     /**
@@ -65,9 +94,15 @@ class ApplicationSessionController extends Controller
      * @param  \App\ApplicationSession  $applicationSession
      * @return \Illuminate\Http\Response
      */
-    public function edit(ApplicationSession $applicationSession)
-    {
-        
+       public function edit($id){
+        $applicationSession = ApplicationSession::find($id);
+        if(!empty($applicationSession->toArray()))
+        {
+            return view('admin.application-cohorts.edit')->with(['applicationSession'=>$applicationSession]);
+        }
+        else{
+            return redirect()->route('application.sessions.list');
+        }
     }
 
     /**
@@ -79,8 +114,24 @@ class ApplicationSessionController extends Controller
      */
     public function update(Request $request, ApplicationSession $applicationSession)
     {
-        //
+        $active = Input::has('active') ?true : false;
+        $applicationSession->title=$request->input('title');
+        $applicationSession->slug=str_slug(request('title'));
+        $applicationSession->active = $active;
+        $applicationSession->slide_title=$request->input('slide_title');
+        $applicationSession->slide_text=$request->input('slide_text');
+       if($request->hasFile('slide_image')){     
+        $slideImage = $request->file('slide_image');
+        $slideImageName = str_slug($request->input('slide_title')).'.'.$slideImage->getClientOriginalExtension();
+        $slideImagePath = "slide-images/".$slideImageName; 
+        $resizedSlideImage = $this->resizeSlideImage($slideImage, $slideImagePath);
+        $applicationSession->slide_image_path  = $slideImagePath;
+       }
+        $applicationSession->save();
+        
+        return redirect()->route('application.sessions.list');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -88,8 +139,12 @@ class ApplicationSessionController extends Controller
      * @param  \App\ApplicationSession  $applicationSession
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ApplicationSession $applicationSession)
+    public function deactivate($id)
     {
-        //
+        $deactivatedSession =ApplicationSession::find($id);
+        $deactivatedSession->active = 0;
+        $deactivatedSession->save();
+
+        return redirect()->route('application.sessions.list');
     }
 }

@@ -57,7 +57,7 @@ class SlideshowController extends Controller
         if(!empty($slideshow->toArray()))
         {
             return view('admin.slideshows.edit')->with(['slideshow'=>$slideshow]);
-        }
+        } 
         else{
             return redirect()->route('slideshow.list');
         }
@@ -68,11 +68,14 @@ class SlideshowController extends Controller
         $slideshow->title=$request->input('title');
         $slideshow->description=$request->input('description');
         $slideshow->button_link=$request->input('button_link');
+
+        if($request->hasFile('background_image')){
         $bgImage = $request->file('background_image');
        $bgImageName = str_slug($request->input('title')).'.'.$bgImage->getClientOriginalExtension();
         $bgImagePath = "slideshow-images/".$bgImageName; 
         $resizedbgImage = $this->resizebgImage($bgImage, $bgImagePath);
         $slideshow->bgImage_path  = $bgImagePath;
+        }
         $slideshow->save();
         
         return redirect()->route('slideshow.list');

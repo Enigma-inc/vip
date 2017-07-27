@@ -114,6 +114,8 @@ class PartnerController extends Controller
     {
         $partner->name=$request->input('name');
         $partner->web_link=$request->input('web_link');
+
+        if($request->hasFile('logo')){
         $logo = $request->file('logo');
         $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
        
@@ -121,6 +123,7 @@ class PartnerController extends Controller
          
         $resizedLogo = $this->resizeLogo($logo, $logoPath);
         $partner ->logo_path = $logoPath;
+        }
         $partner->save();
         
         return redirect()->route('partner.list');

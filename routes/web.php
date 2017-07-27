@@ -23,7 +23,9 @@ Route::prefix('admin')->group(function () {
     Route::get('application-sessions','ApplicationSessionController@index')->name('application.sessions.list');
     Route::get('application-sessions/create','ApplicationSessionController@create')->name('application.sessions.create');
     Route::post('application-sessions','ApplicationSessionController@store')->name('application.sessions.store');
-
+    Route::get('application-sessions/{id}/edit','ApplicationSessionController@edit')->name('application.sessions.edit');
+    Route::patch('application-sessions/{applicationSession}/edit','ApplicationSessionController@update')->name('application.sessions.update');
+    Route::post('application-sessions/{id}/deactivate','ApplicationSessionController@deactivate')->name('application.sessions.deactivate');
     //Application Questions Categories
     Route::get('question-categories','QuestionCategoryController@index')->name('questions.categories.list');
     Route::get('question-categories/create','QuestionCategoryController@create')->name('questions.categories.create');

@@ -4,10 +4,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Create Cohort</div>
                 <div class="panel-body">
-                   {!! Form::open(['method' => 'POST','route'=>'application.sessions.store' , 'class'=>'form-horizontal', 'enctype' => 'multipart/form-data']) !!}
+         {!! Form::model($applicationSession,['method'=>'PATCH','route' => ['application.sessions.update', $applicationSession->id],'class'=>'form-horizontal','enctype' => 'multipart/form-data' ]) !!}
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }} required">
+                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                             <label for="title" class="col-md-4 control-label">Cohort Title</label>
 
                             <div class="col-md-6">
@@ -49,7 +49,7 @@
                             <label for="active" class="col-md-4 control-label">Activate</label>
 
                             <div class="col-md-6">
-                            {!! Form::checkbox('active', true, ['class' => 'form-control'])!!}
+                            {!! Form::checkbox('active',true,['class' => 'form-control'])!!}
                                 @if ($errors->has('active'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('active') }}</strong>
@@ -62,7 +62,7 @@
                             <label for="slide_title" class="col-md-4 control-label">Slide Title</label>
 
                             <div class="col-md-6">
-                            {!! Form::text('slide_title',null,['class' => 'form-control '])!!}
+                            {!! Form::text('slide_title',null,['class' => 'form-control'])!!}
                                 @if ($errors->has('slide_title'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('slide_title') }}</strong>
@@ -104,10 +104,8 @@
                                 </button>
                             </div>
                         </div>
+            {!! Form::close() !!}
                 </div>
             </div>
         </div>
   @endsection
-  <style>
-
-</style>

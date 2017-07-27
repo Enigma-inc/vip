@@ -2,3 +2,13 @@
     border-radius: 0 !important;
     background-color: $color-accent;
 }
+
+div.required label:after {
+    content:"*";
+    color: red;
+    font-size: 25px; 
+    }
+ .button-flex{
+     display: flex;
+     justify-content: space-around;
+ }   

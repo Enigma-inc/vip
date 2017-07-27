@@ -26,7 +26,16 @@
                                 <td>{{$session->opening_date}}</td>
                                 <td>{{$session->closing_date}}</td>
                                 <td>{{$session->active}}</td>
-                                <td></td>
+                                <td class="button-flex">
+                                    <a href="{{route('application.sessions.edit',$session->id)}}"  class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>
+                                    @if($session->active == 1)
+                                      <form action="{{route('application.sessions.deactivate',['id'=>$session->id])}}" method="POST">
+                                        {{csrf_field()}}
+                                        <input type="text" name="file-name"class="" value="{{$session->id}}" hidden>
+                                        <button type="submit" class="btn btn-warning btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Deactivate</button>
+                                    </form>                                
+                                    @endif                                
+                                </td>
                             </tr>
                          @endforeach
                            
