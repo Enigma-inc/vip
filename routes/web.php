@@ -23,6 +23,9 @@ Route::prefix('admin')->group(function () {
     Route::get('application-sessions','ApplicationSessionController@index')->name('application.sessions.list');
     Route::get('application-sessions/create','ApplicationSessionController@create')->name('application.sessions.create');
     Route::post('application-sessions','ApplicationSessionController@store')->name('application.sessions.store');
+    Route::get('application-sessions/{session}/add-question/{question}','ApplicationSessionController@addQuestion')->name('application.sessions.add-question');
+    Route::get('application-sessions/{session}/questions','ApplicationSessionController@sessionQuestionView')->name('application.sessions.question.list');
+    Route::get('api/application-sessions/{session}/questions','ApplicationSessionController@getSessionQuestions');
 
     //Application Questions Categories
     Route::get('question-categories','QuestionCategoryController@index')->name('questions.categories.list');
@@ -30,9 +33,9 @@ Route::prefix('admin')->group(function () {
     Route::post('question-categories','QuestionCategoryController@store')->name('questions.categories.store');
 
     //Application Questions
-
     Route::get('questions','ApplicationQuestionController@index')->name('questions.list');    
     Route::get('questions/create','ApplicationQuestionController@create')->name('questions.create');    
+    Route::post('questions','ApplicationQuestionController@store')->name('questions.store');    
 
         //Mentors routes
     Route::get('mentors',[

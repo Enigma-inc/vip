@@ -16,6 +16,7 @@
                                 <th>Opening Date</th>
                                 <th>Closing Date</th>
                                 <th>Status</th>
+                                <th>Questions</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -26,6 +27,7 @@
                                 <td>{{$session->opening_date}}</td>
                                 <td>{{$session->closing_date}}</td>
                                 <td>{{$session->active}}</td>
+                                <td>{{$session->questions_count}}</td>
                                 <td></td>
                             </tr>
                          @endforeach

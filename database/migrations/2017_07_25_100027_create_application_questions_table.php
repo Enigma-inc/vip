@@ -16,7 +16,7 @@ class CreateApplicationQuestionsTable extends Migration
         Schema::create('application_questions', function (Blueprint $table) {
             $table->increments('id');
             $table->text('question');
-            $table->unsignedInteger('category');
+            $table->unsignedInteger('question_category_id');
             $table->float('index')->unique();
         });
     }

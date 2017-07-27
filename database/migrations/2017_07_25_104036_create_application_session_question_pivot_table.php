@@ -13,10 +13,10 @@ class CreateApplicationSessionQuestionPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('application_session_application_question', function (Blueprint $table) {
+        Schema::create('application_question_application_session', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('application_session_id');
             $table->unsignedInteger('application_question_id');
+            $table->unsignedInteger('application_session_id');
             $table->timestamps();
         });
         

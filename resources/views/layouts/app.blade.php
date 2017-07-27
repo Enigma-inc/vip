@@ -36,7 +36,17 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{route('application.sessions.list')}}">Cohorts</a></li>
+                                <li><a href="">Applicatants</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Settings</li>
+                                <li><a href="{{route('questions.list')}}">Questions</a></li>
+                                <li><a href="{{route('questions.categories.list')}}">Question Categories</a></li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,6 +85,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('vendor/bundle.js') }}"></script>
+     <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+    @yield('page-script')
 </body>
 </html>

@@ -22,4 +22,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
         "resources/assets/theme/css/style.css",
         "resources/assets/theme/css/helpers.css",
         "resources/assets/theme/css/skins/vodacom.css",
-    ], 'public/css/theme-bundle.css');
+    ], 'public/css/theme-bundle.css')
+    .scripts(['node_modules/jquery/dist/jquery.js',
+        'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'
+    ], 'public/vendor/bundle.js')
+    .autoload({ 'jquery': ['window.$', 'window.jQuery'] });

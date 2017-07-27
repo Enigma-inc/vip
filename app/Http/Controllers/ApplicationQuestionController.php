@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\ApplicationQuestion;
 use Illuminate\Http\Request;
+use App\QuestionCategory;
+use App\Http\Requests\ApplicationQuestionRequest;
 
 class ApplicationQuestionController extends Controller
 {
@@ -14,7 +16,7 @@ class ApplicationQuestionController extends Controller
      */
     public function index()
     {
-        $questions=ApplicationQuestion::all();
+        $questions=ApplicationQuestion::with(['category'])->get();
         return view('admin.questions.index')->with(['questions'=>$questions]);
     }
 
@@ -25,7 +27,8 @@ class ApplicationQuestionController extends Controller
      */
     public function create()
     {
-        return view('admin.questions.create');
+        $categories=QuestionCategory::orderBy('name')->get();
+        return view('admin.questions.create')->with(['categories'=>$categories]);
     }
 
     /**
@@ -34,9 +37,15 @@ class ApplicationQuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ApplicationQuestionRequest $request)
     {
-        //
+        ApplicationQuestion::create([
+            'question'=>request('description'),
+            'index'=>request('index'),
+            'question_category_id'=>request('category'),
+        ]);
+
+        return redirect()->route('questions.list');
     }
 
     /**

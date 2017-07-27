@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ApplicationSession;
 use Illuminate\Http\Request;
 use App\Http\Requests\ApplicationSessionRequest;
+use App\ApplicationQuestion;
 
 class ApplicationSessionController extends Controller
 {
@@ -15,7 +16,7 @@ class ApplicationSessionController extends Controller
      */
     public function index()
     {
-        $sessions=ApplicationSession::all();
+        $sessions=ApplicationSession::withCount('questions')->get();
         return view('admin.application-cohorts.index')->with(['applicationSessions'=>$sessions]);
     }
 
@@ -26,7 +27,7 @@ class ApplicationSessionController extends Controller
      */
     public function create()
     {
-        return view('admin.application-sessions.create');
+        return view('admin.application-cohorts.create');
     }
 
     /**
@@ -46,6 +47,22 @@ class ApplicationSessionController extends Controller
         ]);
 
         return redirect()->route('application.sessions.list');
+    }
+    public function getSessionQuestions(ApplicationSession $session)
+    {
+         
+        return $session->questions()->get();
+    }
+    public function sessionQuestionView(ApplicationSession $session,ApplicationQuestion $question)
+    {
+         
+         return view('admin.application-cohorts.session-questions');
+    }
+    public function addQuestion(ApplicationSession $session,ApplicationQuestion $question)
+    {
+         
+        $session->questions()->toggle($question);
+       // return redirect()->route('application.sessions.list');
     }
 
     /**
