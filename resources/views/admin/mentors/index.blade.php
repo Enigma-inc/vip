@@ -10,8 +10,9 @@
                         <thead>
                             <tr>
                                 <th>Names</th>
-                                <th>Email</th>
-                                <th>Role/Position</th>
+                                <th>Web Link</th>
+                                <th>LinkedIn Profile</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -19,8 +20,15 @@
                          @foreach($mentors as $mentor)
                             <tr>
                                 <td>{{$mentor->name}}</td>
-                                <td>{{$mentor->email}}</td>
-                                <td>{{$mentor->position}}</td>
+                                <td>
+                                    <a href="{{$mentor->web_link}}">{{$mentor->web_link}}</a>
+                                </td>
+                                <td>
+                                    <a href="{{$mentor->web_link}}">{{$mentor->linkedin}}</a>
+                                </td>
+                                <td>
+                                    <img src="{{Storage::url($mentor->image_path)}}" alt="mentor image">
+                                </td>
                                 <td><a href="{{route('mentor.edit',['id'=>$mentor->id])}}">Edit</a></td>
                             </tr>
                          @endforeach

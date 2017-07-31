@@ -1,13 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mentor;
 use Illuminate\Http\Request;
 use App\Http\Requests\MentorRequest;
-use App\Mentor;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class MentorController extends Controller
 {
+
+    protected $disk;
+
+    function __construct()
+    {
+        $this->disk = Storage::disk(env('FILE_SYSTEM', 'local'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -35,14 +45,30 @@ class MentorController extends Controller
      *
      * @return Response
      */
-    public function store(MentorRequest $request)
-    {        
+    public function store(Request $request)
+    {   
+        $mentorImage = $request->file('mentor-image');
+        $mentorImageName = str_slug($request->input('name')).'.'.$mentorImage->getClientOriginalExtension();
+        $mentorImagePath = "mentor-images/".$mentorImage; 
+
         Mentor::create([
             'name'=>$request->input('name'),
-            'email'=>$request->input('email'),
-            'position' =>$request->input('position')
+            'web_link'=>$request->input('web-link'),
+            'linkedin' =>$request->input('linkedIn'), 
+            'image_path' =>$mentorImagePath 
         ]);
+         
+         $resizedmentorImage = $this->resizementorImage($mentorImage, $mentorImagePath);
          return redirect()->route('mentor.list');
+    }
+
+    public function resizementorImage(UploadedFile $mentorImage, $mentorImagePath){
+        $imageStream = Image::make($mentorImage)
+                    ->fit(370, 300)
+                    ->stream()
+                    ->detach();
+        $this->disk->put($mentorImagePath, $imageStream, 'public');
+
     }
 
     /**
@@ -85,11 +111,20 @@ class MentorController extends Controller
     {
        
         $mentor->name=$request->input('name');
-        $mentor->position=$request->input('position');
-        $mentor->email=$request->input('email');
-        $mentor->save();
+        $mentor->web_link=$request->input('web_link');
+
+        if($request->hasFile('mentor-image')){
+        $mentorImage = $request->file('mentor-image');
+        $mentorImageName = str_slug($request->input('name')).'.'.$mentorImage->getClientOriginalExtension();
+       
+        $mentorImagePath = "mentor-images/".$mentorImageName; 
+         
+        $resizedMentorImage = $this->resizementorImage($mentorImage, $mentorImagePath);
+        $mentor ->image_path = $mentorImagePath;
+        }
+        $partner->save();
         
-        return redirect()->route('mentor.list');
+        return redirect()->route('partner.list');
        
     }
 
