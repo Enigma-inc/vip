@@ -50,7 +50,7 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
         methods: {
         },
        mounted() {
-            axios.get('http:///localhost/vodacom-foun-portal/api/slideshow').then(res => {
+            axios.get('./api/slideshow').then(res => {
                 if (res.data) {
                     this.slideshows = res.data;
                 }

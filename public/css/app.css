@@ -9412,7 +9412,7 @@ input[type="checkbox"]:disabled:checked:after,
   color: inherit;
 }
 
-.btn {
+.btn-primary {
   border-radius: 0 !important;
   background-color: #953794;
 }

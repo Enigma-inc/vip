@@ -16,8 +16,6 @@ window.Vue = require('vue');
 
 Vue.component('Slideshow', require('./components/slideshow'));
 Vue.component('Startups', require('./components/startups'));
-Vue.component('Partners', require('./components/partners'));
-Vue.component('Mentors', require('./components/mentors'));
 Vue.component('Headsup', require('./components/heads-up'));
 Vue.component('manage-sessions-question', require('./components/admin/manage-sessions-question'));
 

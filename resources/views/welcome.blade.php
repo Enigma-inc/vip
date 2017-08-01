@@ -78,7 +78,8 @@
         <headsup></headsup>
         <startups show-brief="true"></startups>
         <mentors show-title="true"></mentors>
-        <partners></partners>
+         @include('_partials.mentors') 
+         @include('_partials.partners') 
         <!--inject:footer:html-->
         <footer class="footer footer-four">
     <div class="primary-footer dark-bg lighten-4 text-center">

@@ -13,7 +13,7 @@
 
      
             <div class="row"> 
-                     <div class="col-sm-6 col-md-4 item" v-for="(startup, index) in startups" v-if="index <=2 ">
+                     <div class="col-sm-6 col-md-4 item" v-for="(startup, index) in startups" v-if="index <=2 " :key="startup.id">
                     <article class="post-wrapper card">
                         <div class="thumb-wrapper waves-effect waves-block waves-light">
                             <a href="#"><img :src="startup.logo" class="img-responsive" alt=""></a>
@@ -58,7 +58,7 @@
         <section v-if="showBrief == 'false'"  >
         <div class="container">
             <div v-if="showBrief == 'false'"> 
-                     <div class="col-sm-6 col-md-4 item" v-for="(startup, index) in startups">
+                     <div class="col-sm-6 col-md-4 item" v-for="(startup, index) in startups" :key="startup.id">
                     <article class="post-wrapper card">
                         <div class="thumb-wrapper waves-effect waves-block waves-light margin-0">
                             <a href="#"><img :src="startup.logo" class="img-responsive" alt=""></a>
@@ -104,7 +104,7 @@
         data() {
             return {
                 startups: [],
-                startupsBgImage:'',
+                startupsBgImage:'./img/startups-cover.jpg',
                 startupsPageLink:"./startups"
 
             }
@@ -114,16 +114,8 @@
         created:onCreate(),
         mounted() {
 
-            //GET STARTUP BACKGROUND IMAGE
-            axios.get('http:///localhost/vodacom-foun-portal/api/startups-cover').then(res => {
-                            if (res.data) {
-                                this.startupsBgImage = res.data[0].coverImage;
-
-                            }
-                        })
-
             //GET LIST OF STARTUPS
-            axios.get('http:///localhost/vodacom-foun-portal/api/startups').then(res => {
+            axios.get('../api/startups').then(res => {
                 if (res.data) {
                     console.log();
                     this.startups = res.data;

@@ -35,6 +35,7 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
+                 @if (!Auth::guest())
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications <span class="caret"></span></a>
@@ -47,7 +48,9 @@
                                 <li><a href="{{route('questions.categories.list')}}">Question Categories</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('partner.list') }}">Partners</a></li>
                     </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">

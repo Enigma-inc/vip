@@ -30,7 +30,6 @@ class StartupController extends Controller
         return view('admin.startups.index')
                  ->with(['startups'=>$startups]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -52,8 +51,7 @@ class StartupController extends Controller
         $logo = $request->file('logo');
         $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
         $logoPath = "startup-logos/".$logoName; 
-        dd($logo);
-       Startup::create([
+        Startup::create([
             'name'=>$request->input('name'),
             'about'=>$request->input('about'),
             'web_link' =>$request->input('web_link'),
@@ -104,11 +102,20 @@ class StartupController extends Controller
         $startup->name=$request->input('name');
         $startup->about=$request->input('about');
         $startup->web_link=$request->input('web_link');
-        $logo = $request->file('logo');
-        $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
-        $logoPath = "startup-logos/".$logoName; 
-        $resizedLogo = $this->resizeLogo($logo, $logoPath);
-        $startup->logo_path = $logoPath;
+
+        //Check if the Logo if present
+        if($request->has('logo'))
+        {
+            $logo = $request->file('logo');            
+            $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
+            $logoPath = "startup-logos/".$logoName; 
+            $resizedLogo = $this->resizeLogo($logo, $logoPath);
+            $startup->logo_path = $resizedLogo;
+            
+        }
+        
+
+
         $startup->save();
         
         return redirect()->route('startup.list');

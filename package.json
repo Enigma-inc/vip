@@ -19,6 +19,8 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.1.0",
     "gulp-inject": "^4.2.0",
@@ -30,6 +32,7 @@
     "path": "^0.12.7",
     "rimraf": "^2.6.1",
     "through2": "^2.0.3",
-    "vue-carousel-3d": "^0.1.18"
+    "vue-carousel-3d": "^0.1.18",
+    "vue-slick": "^1.1.9"
   }
 }

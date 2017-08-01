@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'PagesController@home')->name('page.home');
+Route::prefix('api')->group(function () {
+ Route::get('startups','StartupController@getStartups');
+
 });
+
+
 Route::prefix('portal')->group(function(){
     
 });
@@ -84,6 +88,7 @@ Route::prefix('admin')->group(function () {
         'uses'=>'StartupController@destroy',
         'as'=>'startup.delete'
     ]);
+  
     
         //Slideshows routes
     Route::get('slideshows',[
