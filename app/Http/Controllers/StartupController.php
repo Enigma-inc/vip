@@ -25,7 +25,7 @@ class StartupController extends Controller
      */
     public function index()
     {
-        $startups = Startup::all();
+        $startups = Startup::latest()->paginate(6);
 
         return view('admin.startups.index')
                  ->with(['startups'=>$startups]);
@@ -103,19 +103,15 @@ class StartupController extends Controller
         $startup->about=$request->input('about');
         $startup->web_link=$request->input('web_link');
 
-        //Check if the Logo if present
-        if($request->has('logo'))
-        {
-            $logo = $request->file('logo');            
-            $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
-            $logoPath = "startup-logos/".$logoName; 
-            $resizedLogo = $this->resizeLogo($logo, $logoPath);
-            $startup->logo_path = $resizedLogo;
-            
+     
+
+        if($request->hasFile('logo')){
+        $logo = $request->file('logo');
+        $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
+        $logoPath = "startup-logos/".$logoName; 
+        $resizedLogo = $this->resizeLogo($logo, $logoPath);
+        $startup->logo_path = $logoPath;
         }
-        
-
-
         $startup->save();
         
         return redirect()->route('startup.list');

@@ -31,6 +31,10 @@ Route::prefix('admin')->group(function () {
     Route::get('application-sessions/{session}/questions','ApplicationSessionController@sessionQuestionView')->name('application.sessions.question.list');
     Route::get('api/application-sessions/{session}/questions','ApplicationSessionController@getSessionQuestions');
 
+    Route::get('application-sessions/{id}/edit','ApplicationSessionController@edit')->name('application.sessions.edit');
+    Route::patch('application-sessions/{applicationSession}/edit','ApplicationSessionController@update')->name('application.sessions.update');
+    Route::post('application-sessions/{id}/deactivate','ApplicationSessionController@deactivate')->name('application.sessions.deactivate');
+    Route::post('application-sessions/{id}/activate','ApplicationSessionController@activate')->name('application.sessions.activate');
     //Application Questions Categories
     Route::get('question-categories','QuestionCategoryController@index')->name('questions.categories.list');
     Route::get('question-categories/create','QuestionCategoryController@create')->name('questions.categories.create');
@@ -61,6 +65,10 @@ Route::prefix('admin')->group(function () {
     Route::patch('mentors/{mentor}/edit',[
         'uses'=>'MentorController@update',
         'as'=>'mentor.update'
+    ]);
+    Route::post('mentors/{id}/delete',[
+        'uses'=>'MentorController@destroy',
+        'as'=>'mentor.delete'
     ]);
 
         //Startups routes

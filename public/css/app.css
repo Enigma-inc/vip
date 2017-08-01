@@ -9438,6 +9438,48 @@ input[type="checkbox"]:disabled:checked:after,
   line-height: 20px;
 }
 
+.mentors-home-page .section-sub {
+  width: 100%;
+  color: #807f7f;
+}
+
+.mentors-home-page .team-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mentors-home-page .team-wrapper .mentor-header-details {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.mentors-home-page .team-wrapper .mentor-header-details .team-title {
+  padding: 0 5px 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mentors-home-page .team-wrapper .mentor-header-details .team-title h3 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.mentors-home-page .team-wrapper .mentor-header-details .team-title ul {
+  margin: auto;
+}
+
+.mentors-home-page .team-wrapper .mentor-body-details {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  padding: 10px;
+  color: #807f7f;
+}
+
 .logo-rhomby {
   position: fixed;
   z-index: 10000;
@@ -9519,5 +9561,71 @@ input[type="checkbox"]:disabled:checked:after,
 
 .tt-nav {
   height: 30px !important;
+}
+
+div.required label:after {
+  content: "*";
+  color: red;
+  font-size: 25px;
+}
+
+.button-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profile .header {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.profile .panel-heading {
+  text-align: center;
+}
+
+.profile .avatar {
+  width: 60%;
+}
+
+.profile .avatar-container {
+  text-align: center;
+}
+
+.profile .avatar-container .thumbnail {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.profile .details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1em;
+}
+
+.profile .details-container .mentor-label,
+.profile .details-container .mentor-info {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.profile .details-container .mentor-label {
+  color: #9c9c9c;
+}
+
+.profile hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #fadcd9;
+  margin: 5px 0;
+  padding: 0;
 }
 

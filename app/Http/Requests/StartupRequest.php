@@ -24,10 +24,10 @@ class StartupRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|max:255',
-            // 'about' => 'required',
-            // 'website_link' => 'required',
-            // 'logo' => 'required'
+            'name' => 'required|max:255',
+            'about' => 'required',
+            'web_link' => 'required',
+            'logo' => 'required'
         ];
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PartnerRequest;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\UploadedFile; 
 
 class PartnerController extends Controller
 {
@@ -26,7 +26,7 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        $partners = Partner::all();
+        $partners = Partner::latest()->paginate(6);
         return view('admin.partners.index')
                ->with(['partners' => $partners]);
     }
@@ -114,6 +114,8 @@ class PartnerController extends Controller
     {
         $partner->name=$request->input('name');
         $partner->web_link=$request->input('web_link');
+
+        if($request->hasFile('logo')){
         $logo = $request->file('logo');
         $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
        
@@ -121,6 +123,7 @@ class PartnerController extends Controller
          
         $resizedLogo = $this->resizeLogo($logo, $logoPath);
         $partner ->logo_path = $logoPath;
+        }
         $partner->save();
         
         return redirect()->route('partner.list');

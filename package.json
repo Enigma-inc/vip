@@ -33,6 +33,10 @@
     "rimraf": "^2.6.1",
     "through2": "^2.0.3",
     "vue-carousel-3d": "^0.1.18",
+<<<<<<< HEAD
     "vue-slick": "^1.1.9"
+=======
+    "vue-slick": "^1.1.7"
+>>>>>>> 634acdf3161f952237bb39760ba6a377c7226fc5
   }
 }

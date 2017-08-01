@@ -2,34 +2,53 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Active Mentors</div>
-                <div class="panel-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Names</th>
-                                <th>Email</th>
-                                <th>Role/Position</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                         @foreach($mentors as $mentor)
-                            <tr>
-                                <td>{{$mentor->name}}</td>
-                                <td>{{$mentor->email}}</td>
-                                <td>{{$mentor->position}}</td>
-                                <td><a href="{{route('mentor.edit',['id'=>$mentor->id])}}">Edit</a></td>
-                            </tr>
-                         @endforeach
-                           
-                        </tbody>
-                    </table>
+    @foreach($mentors as $mentor)  
+        <div class="col-md-4 profile margin-top-5">
+                  
+            <div class="panel panel-default bordered">
+                <div class="panel-heading">
+                    <div class="header">{{$mentor->name}}</div>
                 </div>
-            </div>
+                <div class="panel-body">
+                    <div class="avatar-container">
+                        <img src="{{Storage::url($mentor->image_path)}}" alt="mentor image" class="avatar thumbnail">
+                    </div>
+
+                    <div class="details-container">
+                        <div class="mentor-label">Name</div>
+                        <div class="mentor-info">{{$mentor->name}}</div>
+                    </div>
+                    <hr>
+
+                    <div class="details-container">
+                        <div class="mentor-label">Web Link</div>
+                        <div class="mentor-info"><a href="{{$mentor->web_link}}">{{$mentor->web_link}}</a></div>
+                    </div>
+                    <hr>
+
+                    <div class="details-container">
+                        <div class="mentor-label">LinkedIn Profile</div>
+                        <div class="mentor-info"><a href="{{$mentor->linkedin}}">{{$mentor->linkedin}}</a></div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-xs-12 button-flex">
+                            <a href="{{route('mentor.edit',$mentor->id)}}" class="btn btn-info btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>
+                            <form action="{{route('mentor.delete',['id'=>$mentor->id])}}" method="POST">
+                                {{csrf_field()}}
+                                <input type="text" name="file-name"class="" value="{{$mentor->id}}" hidden>
+                                <button type="submit" class="btn btn-danger btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>            
         </div>
+      @endforeach 
+    </div>
+    <div class="row text-center">
+        {{$mentors->links()}}
     </div>
 </div>
 @endsection

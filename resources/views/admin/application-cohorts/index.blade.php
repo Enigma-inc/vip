@@ -27,8 +27,28 @@
                                 <td>{{$session->opening_date}}</td>
                                 <td>{{$session->closing_date}}</td>
                                 <td>{{$session->active}}</td>
+<<<<<<< HEAD
                                 <td>{{$session->questions_count}}</td>
                                 <td></td>
+=======
+                                <td class="button-flex">
+                                    <a href="{{route('application.sessions.edit',$session->id)}}"  class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>
+                                    @if($session->active == 1)
+                                      <form action="{{route('application.sessions.deactivate',['id'=>$session->id])}}" method="POST">
+                                        {{csrf_field()}}
+                                        <input type="text" name="file-name"class="" value="{{$session->id}}" hidden>
+                                        <button type="submit" class="btn btn-warning btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Deactivate</button>
+                                    </form>                                
+                                    @endif
+                                    @if($session->active==0)
+                                    <form action="{{route('application.sessions.activate',['id'=>$session->id])}}" method="POST">
+                                        {{csrf_field()}}
+                                        <input type="text" name="file-name"class="" value="{{$session->id}}" hidden>
+                                        <button type="submit" class="btn btn-warning btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Activate</button>
+                                    </form>
+                                    @endif                                
+                                </td>
+>>>>>>> 634acdf3161f952237bb39760ba6a377c7226fc5
                             </tr>
                          @endforeach
                            

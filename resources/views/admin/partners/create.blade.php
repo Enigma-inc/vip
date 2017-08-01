@@ -6,7 +6,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Add Partner</div>
                 <div class="panel-body">
-                   {!! Form::open(['method' => 'POST', 'route' => 'partner.store', 'class'=>'form-horizontal', 'enctype' => 'multipart/form-data']) !!}
+                   {!! Form::open(['class'=>'form-horizontal', 'method' => 'POST', 'route' => 'partner.store', 'enctype' => 'multipart/form-data']) !!}
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
