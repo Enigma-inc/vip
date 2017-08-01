@@ -2,11 +2,7 @@
 <carousel-3d :width="2000" :height="800" :autoplay="true" 
  :perspective="0" :space="50" :controls-visible="true"
  :animationSpeed="2000" :autoplayTimeout="10000" >
-<<<<<<< HEAD
 <slide v-for="(slide, i) in slideshows" :index="i"  :key="slide.id">
-=======
-<slide v-for="(slide, i) in slideshows" :index="i" :key="slide.id">
->>>>>>> 634acdf3161f952237bb39760ba6a377c7226fc5
     <section v-bind:style="{ backgroundImage: 'url(' + slide.image + ')' }" class=" pre-banner-1 bg-fixed parallax-bg fullscreen-banner valign-wrapper overlay dark-5"
         data-stellar-background-ratio="0.5">
             <div class="slide-container">

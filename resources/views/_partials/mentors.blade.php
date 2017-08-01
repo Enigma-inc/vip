@@ -1,4 +1,4 @@
-    <section class="padding-bottom-110">
+    <section class="padding-bottom-110 mentors-home-page">
         <div class="container">
 
             <div class="text-center mb-80">
@@ -8,25 +8,28 @@
             </div>
 
             <div class="row">
-            @foreach($partners as $partner)
-                      <div class="col-sm-4 col-md-3" >
+            @foreach($mentors as $mentor)
+                      <div class="col-xs-12" >
                     <div class="team-wrapper">
-                        <div class="team-img">
-                            <a href="#"><img src="./img/mentor-pace-holder.jpg" class="img-responsive" alt="Image"></a>
-                        </div>
-                        <!-- /.team-img -->
+                        <div class="mentor-header-details">
+                            <div class="team-img">
+                                <a href="#"><img src="{{Storage::Url($mentor->image_path)}}" class="img-responsive" alt="Image"></a>
+                            </div>
+                            <!-- /.team-img -->
 
-                        <div class="team-title">
-                            <h3><a href="#">{{$partner->name}}</a></h3>
-                        </div>
-                        <!-- /.team-title -->
+                            <div class="team-title">
+                                <h3><a href="#">{{$mentor->name}}</a></h3>
+                                  <ul>
+                                        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                                  </ul>
+                            </div>
+                            <!-- /.team-title -->
 
-                        <ul class="team-social-links list-inline text-center">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
-                        </ul>
+                          
+                        </div >
+                        <div class="mentor-body-details">
+                         Nozipho Nonyana: is the Founder of NHA Group (comprising of Nonyana Hoohlo & Associates – a development consulting company founded in 2008; NHA Properties – a property management company; as well as Molumong EcoLodge). She is also the Founder and Chief Inspiration Officer at Dynamic Transformations – a personal development company geared towards empowering people to overcome the obstacles that hold them back from living the life that they desire and also a Personal Wellness Mentor. 
+                        </div>
 
                     </div>
                     <!-- /.team-wrapper -->

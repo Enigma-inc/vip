@@ -1,0 +1,27 @@
+.mentors-home-page {
+    .section-sub {
+        width: 100%;
+        color: darken(#999, 10%)
+    }
+    .team-wrapper {
+        display: flex;
+        .mentor-header-details {
+            flex: 1;
+            .team-title {
+                padding: 0 5px 0 5px;
+                display: flex;
+                h3 {
+                    flex: 1;
+                }
+                ul {
+                    margin: auto;
+                }
+            }
+        }
+        .mentor-body-details {
+            flex: 3;
+            padding: 10px;
+            color: darken(#999, 10%)
+        }
+    }
+}

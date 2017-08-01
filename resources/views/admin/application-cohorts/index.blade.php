@@ -27,10 +27,8 @@
                                 <td>{{$session->opening_date}}</td>
                                 <td>{{$session->closing_date}}</td>
                                 <td>{{$session->active}}</td>
-<<<<<<< HEAD
                                 <td>{{$session->questions_count}}</td>
                                 <td></td>
-=======
                                 <td class="button-flex">
                                     <a href="{{route('application.sessions.edit',$session->id)}}"  class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>
                                     @if($session->active == 1)
@@ -48,7 +46,6 @@
                                     </form>
                                     @endif                                
                                 </td>
->>>>>>> 634acdf3161f952237bb39760ba6a377c7226fc5
                             </tr>
                          @endforeach
                            

@@ -6165,15 +6165,9 @@ vue-loader@^12.1.1:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-<<<<<<< HEAD
 vue-slick@^1.1.9:
   version "1.1.9"
   resolved "https://registry.yarnpkg.com/vue-slick/-/vue-slick-1.1.9.tgz#b8916c49124f0b17eea6b155a771f3a8a9789fb4"
-=======
-vue-slick@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/vue-slick/-/vue-slick-1.1.7.tgz#ebe4965eeabf4936dcd9d42ba4242cd67480a910"
->>>>>>> 634acdf3161f952237bb39760ba6a377c7226fc5
   dependencies:
     slick-carousel "^1.6.0"
 
