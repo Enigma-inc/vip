@@ -61,6 +61,18 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
+                            <label for="bio" class="col-md-4 control-label">Biography</label>
+
+                            <div class="col-md-6">
+                                <textarea name="bio" rows="5" class="form-control"></textarea> 
+                                @if ($errors->has('bio'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('bio') }}</strong>
+                                    </span> 
+                                @endif
+                            </div>
+                        </div>
    
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

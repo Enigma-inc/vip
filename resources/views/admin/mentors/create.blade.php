@@ -36,8 +36,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('web-link') ? ' has-error' : '' }}">
-                            <label for="web-link" class="col-md-4 control-label">Website Link</label>
+                        <div class="form-group{{ $errors->has('website-link') ? ' has-error' : '' }}">
+                            <label for="website-link" class="col-md-4 control-label">Website Link</label>
 
                             <div class="col-md-6">
                                 <input id="web-link" type="url" class="form-control" name="web-link" value="{{ old('web-link') }}" >
@@ -60,6 +60,18 @@
                                     <span class="help-block">
                                         <strong>{{ $errors->first('mentor-image') }}</strong>
                                     </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
+                            <label for="bio" class="col-md-4 control-label">Biography</label>
+
+                            <div class="col-md-6">
+                                <textarea name="bio" rows="5" class="form-control"></textarea> 
+                                @if ($errors->has('bio'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('bio') }}</strong>
+                                    </span> 
                                 @endif
                             </div>
                         </div>
