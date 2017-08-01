@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PartnerRequest;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\UploadedFile; 
 
 class PartnerController extends Controller
 {

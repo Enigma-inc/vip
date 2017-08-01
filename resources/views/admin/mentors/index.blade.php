@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 ">
             <div class="panel panel-default">
                 <div class="panel-heading">Active Mentors</div>
                 <div class="panel-body">
@@ -28,11 +28,19 @@
                                 </td>
                                 <td>
                                     <img src="{{Storage::url($mentor->image_path)}}" alt="mentor image" class="rounded img-thumbnail">
-                                </td class="button-flex"> 
-                                <td><a href="{{route('mentor.edit',['id'=>$mentor->id])}}">Edit</a></td>
+                                </td> 
+                                <td class="button-flex">
+                                    <a href="{{route('mentor.edit',['id'=>$mentor->id])}}" class="btn btn-warning btn-xs margin-right-5">Edit</a>
+                                     <form action="{{route('mentor.delete',['id'=>$mentor->id])}}" method="POST">
+                                        {{csrf_field()}}
+                                        <input type="text" name="file-name"class="" value="{{$mentor->id}}" hidden>
+                                        <button type="submit" class="btn btn-warning btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Remove</button>
+                                    </form>    
+                                
+                                </td>
                             </tr>
                          @endforeach
-                           
+                            
                         </tbody>
                     </table>
                 </div>

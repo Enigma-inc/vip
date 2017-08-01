@@ -58,6 +58,10 @@ Route::prefix('admin')->group(function () {
         'uses'=>'MentorController@update',
         'as'=>'mentor.update'
     ]);
+    Route::post('mentors/{id}/delete',[
+        'uses'=>'MentorController@destroy',
+        'as'=>'mentor.delete'
+    ]);
 
         //Startups routes
     Route::get('startups',[
