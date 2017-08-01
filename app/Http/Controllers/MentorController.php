@@ -45,12 +45,12 @@ class MentorController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(MentorRequest $request)
     {   
         $mentorImage = $request->file('mentor-image');
         $mentorImageName = str_slug($request->input('name')).'.'.$mentorImage->getClientOriginalExtension();
-        $mentorImagePath = "mentor-images/".$mentorImage; 
-
+        $mentorImagePath = "mentor-images/".$mentorImageName; 
+    
         Mentor::create([
             'name'=>$request->input('name'),
             'web_link'=>$request->input('web-link'),

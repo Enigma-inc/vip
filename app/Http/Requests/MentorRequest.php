@@ -24,9 +24,9 @@ class MentorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255',
-            'web_link' => 'required',
-            'linkedin' => 'required', 
+            // 'name' => 'required|max:255',
+            // 'web_link' => 'required',
+            // 'linkedin' => 'required' 
         ];
     }
 }
