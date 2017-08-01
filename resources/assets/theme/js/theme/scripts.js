@@ -29,7 +29,7 @@ Version: 1.5
         /* === nav sticky header === */
         var navBottom = $(".nav-bottom").offset();
 
-        $(window).on('scroll', function () {
+      /*  $(window).on('scroll', function () {
             var w = $(window).width();
             if ($(".nav-bottom").length == 0) {
                 if (w > 768) {
@@ -50,7 +50,7 @@ Version: 1.5
                     }
                 }
             }
-        });
+        });*/
 
 
 

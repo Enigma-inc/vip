@@ -22,6 +22,7 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
 
     <!--inject:css-->
+    <link rel="stylesheet" href="{{mix('css/app.css')}}">
     <link rel="stylesheet" href="{{mix('css/theme-bundle.css')}}">
     <!--endinject-->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
@@ -29,10 +30,10 @@
 </head>
 
 <body id="top">
-    <img class="logo-rhomby" src="assets/img/logo-rhomby.png" alt="" />
+    <img class="logo-rhomby" src="{{asset('img/logo-rhomby.png')}}" alt="" />
     <div id="app">
         <!--inject:header:html-->
-        <header id="header" class="tt-nav transparent-header">
+        <header id="header-" class="tt-nav transparent-header sticky">
 
     <div class="header-sticky light-header">
 
@@ -41,10 +42,10 @@
             <div id="materialize-menu" class="menuzord">
 
                 <!--logo start-->
-                <a href="./" class="logo-brand">
+                {{--  <a href="./" class="logo-brand">
                     <img class="logo-dark" src="{{asset('img/logo.png')}}" alt="Logo" />
                     <img class="logo-light" src="{{asset('img/logo.png')}}" alt="Logo" />
-                </a>
+                </a>  --}}
                 <!--logo end-->
 
                 <!--mega menu start-->
@@ -76,8 +77,7 @@
         <!--endinject-->
         <slideshow></slideshow>
         <headsup></headsup>
-        <startups show-brief="true"></startups>
-        <mentors show-title="true"></mentors>
+        @include('_partials.startups') 
          @include('_partials.mentors') 
          @include('_partials.partners') 
         <!--inject:footer:html-->
@@ -135,7 +135,8 @@
     </div>
 
     <!--inject:js-->
-    <script src="./js/lib-bundle-424d6b5acf.js"></script>
+    <script src="/public/js/lib-bundle-424d6b5acf.js"></script>
+    <script src="/public/js/lib-bundle-63db8afbee.js"></script>
     <!--endinject-->
 
     <script src="{{mix('js/app.js')}}"></script>

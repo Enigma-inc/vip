@@ -1,6 +1,6 @@
 <template>
   <div>
-        <section v-if="showBrief == 'true'" v-bind:style="{ backgroundImage: 'url(' + startupsBgImage + ')' }" class="padding-top-50 margin-top-30 padding-bottom-20 grid-news-hover pre-banner-1 bg-fixed parallax-bg fullscreen-banner valign-wrapper overlay"
+    <section v-if="showBrief == 'true'" v-bind:style="{ backgroundImage: 'url(' + startupsBgImage + ')' }" class="padding-top-50 margin-top-30 padding-bottom-20 grid-news-hover pre-banner-1 bg-fixed parallax-bg fullscreen-banner valign-wrapper overlay"
         data-stellar-background-ratio="0.5" style="background-position: 0% -513px; height: 315px;">
         <div class="container">
 
@@ -48,46 +48,6 @@
                       View More
                     </a>
                </div>
-            </div>
-          
-            <!-- /.row -->
-
-        </div>
-        <!-- /.container -->
-    </section>
-        <section v-if="showBrief == 'false'"  >
-        <div class="container">
-            <div v-if="showBrief == 'false'"> 
-                     <div class="col-sm-6 col-md-4 item" v-for="(startup, index) in startups" :key="startup.id">
-                    <article class="post-wrapper card">
-                        <div class="thumb-wrapper waves-effect waves-block waves-light margin-0">
-                            <a href="#"><img :src="startup.logo" class="img-responsive" alt=""></a>
-                        </div>
-                        <!-- .post-thumb -->
-
-                        <div class="blog-content margin-0">
-
-                            <div class=""></div>
-
-                            <header class="entry-header-wrapper sticky">
-                                <div class="entry-header text-center" style="height: 50px">
-                                    <h2 class="entry-title"><a href="#">{{startup.name}}</a></h2>
-                                </div>
-                                <!-- /.entry-header -->
-                            </header>
-                            <!-- /.entry-header-wrapper -->
-
-                            <div class="entry-content " style="height: 220px;overflow-y:auto;">
-                                <p v-html="startup.description"></p>
-                            </div>
-                            <!-- .entry-content -->
-
-                        </div>
-                        <!-- /.blog-content -->
-
-                    </article>
-                    <!-- /.post-wrapper -->
-                </div>
             </div>
           
             <!-- /.row -->

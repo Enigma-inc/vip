@@ -39812,46 +39812,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -39954,53 +39914,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": _vm.startupsPageLink
     }
-  }, [_vm._v("\n                    View More\n                  ")])])], 2)])]) : _vm._e(), _vm._v(" "), (_vm.showBrief == 'false') ? _c('section', [_c('div', {
-    staticClass: "container"
-  }, [(_vm.showBrief == 'false') ? _c('div', _vm._l((_vm.startups), function(startup, index) {
-    return _c('div', {
-      key: startup.id,
-      staticClass: "col-sm-6 col-md-4 item"
-    }, [_c('article', {
-      staticClass: "post-wrapper card"
-    }, [_c('div', {
-      staticClass: "thumb-wrapper waves-effect waves-block waves-light margin-0"
-    }, [_c('a', {
-      attrs: {
-        "href": "#"
-      }
-    }, [_c('img', {
-      staticClass: "img-responsive",
-      attrs: {
-        "src": startup.logo,
-        "alt": ""
-      }
-    })])]), _vm._v(" "), _c('div', {
-      staticClass: "blog-content margin-0"
-    }, [_c('div', {}), _vm._v(" "), _c('header', {
-      staticClass: "entry-header-wrapper sticky"
-    }, [_c('div', {
-      staticClass: "entry-header text-center",
-      staticStyle: {
-        "height": "50px"
-      }
-    }, [_c('h2', {
-      staticClass: "entry-title"
-    }, [_c('a', {
-      attrs: {
-        "href": "#"
-      }
-    }, [_vm._v(_vm._s(startup.name))])])])]), _vm._v(" "), _c('div', {
-      staticClass: "entry-content ",
-      staticStyle: {
-        "height": "220px",
-        "overflow-y": "auto"
-      }
-    }, [_c('p', {
-      domProps: {
-        "innerHTML": _vm._s(startup.description)
-      }
-    })])])])])
-  })) : _vm._e()])]) : _vm._e()])
+  }, [_vm._v("\n                    View More\n                  ")])])], 2)])]) : _vm._e()])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "text-center mb-20"

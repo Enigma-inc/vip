@@ -9412,8 +9412,112 @@ input[type="checkbox"]:disabled:checked:after,
   color: inherit;
 }
 
+.home-page-startups .section-title {
+  color: #fff;
+}
+
+.home-page-startups .section-sub {
+  width: 100%;
+  color: #fff;
+}
+
+.home-page-startups .card a {
+  color: #ffab40;
+  margin-right: 0;
+}
+
+.home-page-startups .grid-news-hover .blog-content {
+  padding: 5px;
+}
+
+.home-page-startups .blog-content {
+  height: 310px;
+}
+
+.home-page-startups .blog-content p {
+  line-height: 20px;
+}
+
+.logo-rhomby {
+  position: fixed;
+  z-index: 10000;
+  top: -15px;
+  width: 40vw;
+  /* Smartphones (portrait and landscape) ----------- */
+  /* Smartphones (landscape) ----------- */
+  /* Smartphones (portrait) ----------- */
+  /* iPads (portrait and landscape) ----------- */
+  /* iPads (landscape) ----------- */
+  /* iPads (portrait) ----------- */
+  /* Desktops and laptops ----------- */
+  /* Large screens ----------- */
+  /* iPhone 4 ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .logo-rhomby {
+    top: -5px;
+    width: 40vw;
+  }
+}
+
+@media only screen and (min-width: 321px) {
+  .logo-rhomby {
+    top: -20px;
+    width: 15vw;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .logo-rhomby {
+    top: -15px;
+    width: 40vw;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .logo-rhomby {
+    top: -15px;
+    width: 30vw;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .logo-rhomby {
+    /* Styles */
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .logo-rhomby {
+    /* Styles */
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .logo-rhomby {
+    /* Styles */
+  }
+}
+
+@media only screen and (min-width: 1824px) {
+  .logo-rhomby {
+    /* Styles */
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .logo-rhomby {
+    /* Styles */
+  }
+}
+
 .btn-primary {
   border-radius: 0 !important;
   background-color: #953794;
+}
+
+.tt-nav {
+  height: 30px !important;
 }
 

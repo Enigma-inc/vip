@@ -18,7 +18,7 @@ class CreateStartupsTable extends Migration
             $table->string('name');
             $table->string('logo_path');
             $table->text('about');
-            $table->text('web_link');
+            $table->text('web_link')->nullable();
             $table->timestamps();
         });
     }

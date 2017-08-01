@@ -29,6 +29,6 @@ class CreateApplicationSessionQuestionPivotTable extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('application_session_application_question');
+         Schema::dropIfExists('application_question_application_session');
     }
 }
