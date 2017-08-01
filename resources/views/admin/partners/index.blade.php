@@ -23,9 +23,9 @@
                                     <a href="{{$partner->web_link}}">{{$partner->web_link}}</a>
                                 </td>
                                 <td>
-                                    <img src="{{Storage::url($partner->logo_path)}}" alt="partner logo">
+                                    <img src="{{Storage::url($partner->logo_path)}}" alt="partner logo" class="rounded img-thumbnail">
                                 </td>
-                                <td>
+                                <td class="button-flex">
                                       <a href="{{route('partner.edit',$partner->id)}}" class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>                                
                                     <form action="{{route('partner.delete',['id'=>$partner->id])}}" method="POST">
                                         {{csrf_field()}}

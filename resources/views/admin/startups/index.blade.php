@@ -27,7 +27,7 @@
                                 <td>
                                     <img src="{{Storage::url($startup->logo_path)}}" alt="startup logo">
                                 </td>
-                                <td>
+                                <td class="button-flex">
                                     <a href="{{route('startup.edit',$startup->id)}}" class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>                                
                                     <form action="{{route('startup.delete',['id'=>$startup->id])}}" method="POST">
                                         {{csrf_field()}}

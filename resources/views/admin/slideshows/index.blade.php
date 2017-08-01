@@ -23,7 +23,7 @@
                                 <td>
                                     <a href="{{$slideshow->button_link}}">{{$slideshow->button_link}}</a>
                                 </td>
-                                 <td>
+                                 <td class="button-flex">
                                     <a href="{{route('slideshow.edit',$slideshow->id)}}"  class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>                                
                                     <form action="{{route('slideshow.delete',['id'=>$slideshow->id])}}" method="POST">
                                         {{csrf_field()}}

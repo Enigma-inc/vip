@@ -27,8 +27,8 @@
                                     <a href="{{$mentor->web_link}}">{{$mentor->linkedin}}</a>
                                 </td>
                                 <td>
-                                    <img src="{{Storage::url($mentor->image_path)}}" alt="mentor image">
-                                </td>
+                                    <img src="{{Storage::url($mentor->image_path)}}" alt="mentor image" class="rounded img-thumbnail">
+                                </td class="button-flex"> 
                                 <td><a href="{{route('mentor.edit',['id'=>$mentor->id])}}">Edit</a></td>
                             </tr>
                          @endforeach
