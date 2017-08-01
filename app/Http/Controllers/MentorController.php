@@ -53,9 +53,10 @@ class MentorController extends Controller
     
         Mentor::create([
             'name'=>$request->input('name'),
-            'web_link'=>$request->input('web-link'),
+            'website_link'=>$request->input('web-link'),
             'linkedin' =>$request->input('linkedIn'), 
-            'image_path' =>$mentorImagePath 
+            'image_path' =>$mentorImagePath,
+            'bio' => $request->input('bio') 
         ]);
          
          $resizedmentorImage = $this->resizementorImage($mentorImage, $mentorImagePath);
@@ -111,8 +112,8 @@ class MentorController extends Controller
     {
        
         $mentor->name=$request->input('name');
-        $mentor->web_link=$request->input('web_link');
-
+        $mentor->website_link=$request->input('web-link');
+        $mentor->bio = $request->input('bio');
         if($request->hasFile('mentor-image')){
         $mentorImage = $request->file('mentor-image');
         $mentorImageName = str_slug($request->input('name')).'.'.$mentorImage->getClientOriginalExtension();
@@ -124,7 +125,7 @@ class MentorController extends Controller
         }
         $partner->save();
         
-        return redirect()->route('partner.list');
+        return redirect()->route('mentor.list');
        
     }
 

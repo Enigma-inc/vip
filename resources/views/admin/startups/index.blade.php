@@ -20,6 +20,11 @@
                                      <a href="{{$startup->web_link}}">{{$startup->web_link}}</a>
                                  </div>
                         </div>
+                    <hr>
+
+                    <div class="details-container">
+                        <!--div- class="startup-label">About</div-->
+                        <div class="startup-info text-justify">{{$startup->about}}</div>
                     </div>
                     <div class="panel-footer">
                         <div class="btn-group btn-group-justified" role="group" aria-label="...">
