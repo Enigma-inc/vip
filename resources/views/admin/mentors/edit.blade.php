@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Mentor</div>
                 <div class="panel-body">
-                    {!! Form::model($mentor,['method'=>'PATCH','route' => ['mentor.update', $mentor->id],'class'=>'form-horizontal' ]) !!}
+                    {!! Form::model($mentor,['method'=>'PATCH','route' => ['mentor.update', $mentor->id],'class'=>'form-horizontal' ,'enctype' => 'multipart/form-data' ]) !!}
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -22,35 +22,46 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('position') ? ' has-error' : '' }}">
-                            <label for="position" class="col-md-4 control-label">Role/Position</label>
+                        <div class="form-group{{ $errors->has('linkedIn') ? ' has-error' : '' }}">
+                            <label for="linkedIn" class="col-md-4 control-label">LinkedIn Profile</label>
 
                             <div class="col-md-6">
-                                 {!! Form::text('position',null,['class' => 'form-control'])!!}
-                                @if ($errors->has('position'))
+                                 {!! Form::text('linkedin',null,['class' => 'form-control'])!!}
+                                @if ($errors->has('linkedIn'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('position') }}</strong>
+                                        <strong>{{ $errors->first('linkedIn') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Email</label>
+                        <div class="form-group{{ $errors->has('web-link') ? ' has-error' : '' }}">
+                            <label for="web-link" class="col-md-4 control-label">Website Link</label>
 
                             <div class="col-md-6">
-                                {!! Form::text('email',null,['class' => 'form-control'])!!}
-                                @if ($errors->has('email'))
+                                {!! Form::text('web_link',null,['class' => 'form-control'])!!}
+                                @if ($errors->has('web-link'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('web-link') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('mentor-image') ? ' has-error' : '' }}">
+                            <label for="mentor-image" class="col-md-4 control-label">Mentor Image</label>
 
+                            <div class="col-md-6">
+                                <input id="mentor-image" type="file" class="form-control" name="mentor-image"
+                                  accept=".jpg, .png, .jpeg">
+
+                                @if ($errors->has('mentor-image'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('mentor-image') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
    
-
-
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
