@@ -27,7 +27,7 @@
                     <hr>
 
                     <div class="details-container">
-                        <div class="startup-label">About</div>
+                        <!--div- class="startup-label">About</div-->
                         <div class="startup-info">{{$startup->about}}</div>
                     </div>
                     <hr>
