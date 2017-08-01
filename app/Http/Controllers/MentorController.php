@@ -25,7 +25,7 @@ class MentorController extends Controller
      */
     public function index()
     {
-        $mentors = Mentor::all();
+        $mentors = Mentor::latest()->paginate(6);
         return view('admin.mentors.index')
                ->with(['mentors'=>$mentors]);
     }

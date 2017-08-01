@@ -25,7 +25,7 @@ class StartupController extends Controller
      */
     public function index()
     {
-        $startups = Startup::all();
+        $startups = Startup::latest()->paginate(6);
 
         return view('admin.startups.index')
                  ->with(['startups'=>$startups]);

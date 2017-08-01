@@ -11,4 +11,47 @@ div.required label:after {
  .button-flex{
      display: flex;
      justify-content: space-between;
- }   
+ }
+
+.profile{
+    .header{
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    .panel-heading{
+        text-align: center;
+    }
+    .avatar{
+        width: 60%;
+    }
+    .avatar-container{
+        text-align: center;
+        .thumbnail{
+            display: inline;
+            margin-bottom: 0;
+        }
+    }
+    .details-container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1em;
+        .mentor-label,
+        .mentor-info{
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        .mentor-label{
+            color: darken(#a9a9a9, 5);
+        }
+    }
+    hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid lighten(#E13F30, 38);
+    margin: 5px 0;
+    padding: 0;
+  }
+}
+
+  
