@@ -22,13 +22,17 @@
 
                     <div class="details-container">
                         <div class="mentor-label">Web Link</div>
-                        <div class="mentor-info"><a href="{{$mentor->web_link}}">{{$mentor->web_link}}</a></div>
+                        <div class="mentor-info"><a href="{{$mentor->web_link}}">{{$mentor->website_link}}</a></div>
                     </div>
                     <hr>
 
                     <div class="details-container">
                         <div class="mentor-label">LinkedIn Profile</div>
                         <div class="mentor-info"><a href="{{$mentor->linkedin}}">{{$mentor->linkedin}}</a></div>
+                    </div>
+                    <hr>
+                     <div class="details-container">
+                        <div class="mentor-info">{{$mentor->bio}}</div>
                     </div>
                     <hr>
 

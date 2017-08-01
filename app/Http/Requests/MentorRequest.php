@@ -25,9 +25,9 @@ class MentorRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'web-link' => 'required',
+            'bio' => 'required',
             'linkedIn' => 'required',
-            'mentor-image'=>'required' 
+            'mentor-image'=>'required', 
         ];
     }
 }
