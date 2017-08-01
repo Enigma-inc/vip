@@ -12,7 +12,9 @@ class PagesController extends Controller
 {
      public function home(){
          $partners=Partner::all();
-         $mentors=Mentor::all();
+         $mentors=Mentor::orderByRaw("RAND()")
+                            ->take(2)
+                            ->get();
          $startups=Startup::orderByRaw("RAND()")
                             ->take(3)
                             ->get();

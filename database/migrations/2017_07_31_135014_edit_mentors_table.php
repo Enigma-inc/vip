@@ -15,6 +15,7 @@ class EditMentorsTable extends Migration
     {
         Schema::table('mentors', function(Blueprint $table){
             $table->string('linkedin')
+                  ->nullable()
                   ->after('name');
             $table->string('web_link')
                   ->after('name');
@@ -33,9 +34,29 @@ class EditMentorsTable extends Migration
     public function down()
     {
         Schema::table('mentors',function(Blueprint $table){
-            $table->dropColumn('linkedin');
-            $table->dropColumn('web_link');
-            $table->dropColumn('image_path');
+
+              if (Schema::hasColumn('mentors', 'linkedin'))
+                    {
+                        Schema::table('mentors', function (Blueprint $table)
+                        {
+                            $table->dropColumn('linkedin');
+                        });
+                    }
+              if (Schema::hasColumn('mentors', 'web_link'))
+                    {
+                        Schema::table('mentors', function (Blueprint $table)
+                        {
+                            $table->dropColumn('web_link');
+                        });
+                    }
+              if (Schema::hasColumn('mentors', 'image_path'))
+                    {
+                        Schema::table('mentors', function (Blueprint $table)
+                        {
+                            $table->dropColumn('image_path');
+                        });
+                    }
+
         });
     }
 }

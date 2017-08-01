@@ -28,7 +28,7 @@
                           
                         </div >
                         <div class="mentor-body-details">
-                         Nozipho Nonyana: is the Founder of NHA Group (comprising of Nonyana Hoohlo & Associates – a development consulting company founded in 2008; NHA Properties – a property management company; as well as Molumong EcoLodge). She is also the Founder and Chief Inspiration Officer at Dynamic Transformations – a personal development company geared towards empowering people to overcome the obstacles that hold them back from living the life that they desire and also a Personal Wellness Mentor. 
+                         {!! $mentor->bio!!}
                         </div>
 
                     </div>
@@ -40,12 +40,12 @@
 
 
         </div>
-        <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+        {{--  <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
             <p>If you are interested to become a mentor to the program, click the button below and let us have a chat! </p>
-        </div>
+        </div>  --}}
         <div class="col-xs-12 margin-bottom-50" style="text-align:center">
             <a href="./mentors" class="btn btn-lg vodacom waves-effect waves-light mt-30">
-                      Become a Mentor
+                      View More
                     </a>
         </div>
     </section>

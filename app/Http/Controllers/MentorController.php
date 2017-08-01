@@ -123,7 +123,7 @@ class MentorController extends Controller
         $resizedMentorImage = $this->resizementorImage($mentorImage, $mentorImagePath);
         $mentor ->image_path = $mentorImagePath;
         }
-        $partner->save();
+        $mentor->save();
         
         return redirect()->route('mentor.list');
        

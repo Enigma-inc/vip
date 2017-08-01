@@ -13,12 +13,22 @@ class AddBiographyColumnToMentorsTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasColumn('mentors', 'web_link'))
+        {
+            Schema::table('mentors', function (Blueprint $table)
+            {
+                $table->dropColumn('web_link');
+            });
+        }
+
         Schema::table('mentors', function(Blueprint $table){
-            $table->dropColumn('web_link');
+
+
+            
             $table->string('website_link')
                   ->nullable()
                   ->after('name'); 
-            $table->string('bio')
+            $table->text('bio')
                   ->after('name');  
         });
     }
@@ -31,7 +41,7 @@ class AddBiographyColumnToMentorsTable extends Migration
     public function down()
     {
         Schema::table('mentors',function(Blueprint $table){
-            $table->dropColumn('web_link');
+            $table->dropColumn('website_link');
             $table->dropColumn('bio');
         });
     }

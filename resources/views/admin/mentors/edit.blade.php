@@ -65,7 +65,7 @@
                             <label for="bio" class="col-md-4 control-label">Biography</label>
 
                             <div class="col-md-6">
-                                <textarea name="bio" rows="5" class="form-control"></textarea> 
+                                 {!! Form::textarea('bio',null,['class' => 'form-control'])!!}
                                 @if ($errors->has('bio'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('bio') }}</strong>

@@ -3,7 +3,7 @@
 
             <div class="text-center mb-80">
                 <h2 class="section-title color-black">Our Partners</h2>
-                <p class="section-sub color-black">Our partners represent a wide variety of sectors and expertise, and are committed to developing entrepreneurship and driving socio-economic development through business. We strongly believe in forming meaningful partnerships to amplify the outcomes of the program and reach 
+                <p class="section-sub color-black" style="width:100%">Our partners represent a wide variety of sectors and expertise, and are committed to developing entrepreneurship and driving socio-economic development through business. We strongly believe in forming meaningful partnerships to amplify the outcomes of the program and reach 
                 as many Basotho entrepreneurs as possible.</p>
             </div>
 

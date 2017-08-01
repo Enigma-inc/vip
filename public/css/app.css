@@ -9554,6 +9554,10 @@ input[type="checkbox"]:disabled:checked:after,
   }
 }
 
+body {
+  color: #807f7f;
+}
+
 .btn-primary {
   border-radius: 0 !important;
   background-color: #953794;
