@@ -14,10 +14,11 @@ class SlideshowController extends Controller
     function __construct()
     {
         $this->disk = Storage::disk(env('FILE_SYSTEM', 'local'));
+         $this->middleware('auth');
     }
 
     public function index(){
-        $slideshows = Slideshow::all();
+        $slideshows = Slideshow::latest()->paginate(6);
         return view('admin.slideshows.index')
                ->with(['slideshows' =>$slideshows]);
     }

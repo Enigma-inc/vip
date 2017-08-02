@@ -17,6 +17,7 @@ class PartnerController extends Controller
     function __construct()
     {
         $this->disk = Storage::disk(env('FILE_SYSTEM', 'local'));
+        $this->middleware('auth');
     }
 
     /**

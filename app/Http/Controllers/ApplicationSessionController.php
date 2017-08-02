@@ -18,6 +18,7 @@ class ApplicationSessionController extends Controller
     function __construct()
     {
         $this->disk = Storage::disk(env('FILE_SYSTEM', 'local'));
+         $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.

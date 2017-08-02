@@ -9,6 +9,7 @@ use App\Http\Requests\ApplicationQuestionRequest;
 
 class ApplicationQuestionController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *

@@ -49,6 +49,9 @@
                             </ul>
                         </li>
                         <li><a href="{{ route('partner.list') }}">Partners</a></li>
+                        <li><a href="{{ route('mentor.list') }}">Mentors</a></li>
+                        <li><a href="{{ route('startup.list') }}">Startups</a></li>
+                        <li><a href="{{ route('slideshow.list') }}">Slide Shows</a></li>    
                     </ul>
                     @endif
 
