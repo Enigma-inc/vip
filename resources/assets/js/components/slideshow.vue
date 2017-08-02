@@ -31,7 +31,7 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
                     title: 'vodacom Innovation Park',
                     description: `The Vodacom Innovation Park is a Lesotho-based Innovation Lab and Startup Accelerator 
                          helping to bring the best startup and business ideas to scale locally, regionally and globally`,
-                    slide_image: './assets/img/main-cover.jpg',
+                    slide_image: './img/main-cover.jpg',
                     link: '#',
                     btnText: ''
                 },
@@ -39,7 +39,7 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
                     title: 'vodacom Innovation Park',
                     description: `The Vodacom Innovation Park is a Lesotho-based Innovation Lab and Startup Accelerator 
                          helping to bring the best startup and business ideas to scale locally, regionally and globally`,
-                    slide_image: './assets/img/main-cover.jpg',
+                    slide_image: './img/main-cover.jpg',
                     link: '#',
                     btnText: ''
                 }
