@@ -55,7 +55,7 @@
                             <label for="description" class="col-md-4 control-label">Description</label>
 
                             <div class="col-md-6">
-                                <textarea name="description" rows="5" class="form-control"></textarea> 
+                            {!! Form::textarea('description',null,['class' => 'form-control'])!!}
                                 @if ($errors->has('description'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('description') }}</strong>

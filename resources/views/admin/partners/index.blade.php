@@ -2,6 +2,12 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="co col-xs-12">
+            <a href="{{route('partner.create')}}" class="btn btn-primary col-xs-12 col-sm-6 col-md-4 pull-right">Add a Partner</a>
+        </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Partners</div>
+            <div class="panel-body">
     @foreach($partners as $partner)  
         <div class="col-md-4 profile margin-top-5">
                   
@@ -39,6 +45,9 @@
             </div>            
         </div>
       @endforeach 
+      </div>
+      </div>
+      </div>      
     </div>
     <div class="row text-center">
         {{$partners->links()}}

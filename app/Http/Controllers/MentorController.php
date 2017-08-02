@@ -16,6 +16,7 @@ class MentorController extends Controller
     function __construct()
     {
         $this->disk = Storage::disk(env('FILE_SYSTEM', 'local'));
+         $this->middleware('auth');
     }
 
     /**
