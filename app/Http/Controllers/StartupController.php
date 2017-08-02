@@ -30,6 +30,7 @@ class StartupController extends Controller
         return view('admin.startups.index')
                  ->with(['startups'=>$startups]);
     }
+
     /**
      * Show the form for creating a new resource.
      *

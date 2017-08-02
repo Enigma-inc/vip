@@ -7,6 +7,8 @@ use App\Http\Requests\SlideshowRequest;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+
 class SlideshowController extends Controller
 {
     protected $disk;
@@ -20,6 +22,10 @@ class SlideshowController extends Controller
         $slideshows = Slideshow::all();
         return view('admin.slideshows.index')
                ->with(['slideshows' =>$slideshows]);
+    }
+    public function slideshowsJson()
+    {
+       return Slideshow::all();
     }
 
     public function create(){

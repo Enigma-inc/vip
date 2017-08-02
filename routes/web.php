@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', 'PagesController@home')->name('page.home');
+Route::get('/', 'PagesController@home')->name('pages.home');
+Route::get('/about', 'PagesController@about')->name('pages.about');
+Route::get('/mentors', 'PagesController@mentors')->name('pages.mentors');
+Route::get('/startups', 'PagesController@startups')->name('pages.startups');
+
+
+
 Route::prefix('api')->group(function () {
- Route::get('startups','StartupController@getStartups');
+//  Route::get('startups','StartupController@getStartups');
+ Route::get('slideshows','SlideshowController@slideshowsJson');
 
 });
 

@@ -30,7 +30,7 @@
 </head>
 
 <body id="top">
-  <a href="{{route('page.home')}}">  <img class="logo-rhomby" src="{{asset('img/logo-rhomby.png')}}" alt="" /></a>
+  <a href="{{route('pages.home')}}">  <img class="logo-rhomby" src="{{asset('img/logo-rhomby.png')}}" alt="" /></a>
     <div id="app">
         <!--inject:header:html-->
         <header id="header-" class="tt-nav transparent-header sticky">
@@ -51,19 +51,16 @@
                 <!--mega menu start-->
                 <ul class="menuzord-menu pull-right light">
                     <li class="active">
-                        <a href="{{route('home')}}">Home</a>
+                        <a href="{{route('pages.home')}}">Home</a>
                     </li>
                     <li>
-                        <a href="./about">About</a>
+                        <a href="{{route('pages.about')}}">About</a>
                     </li>
                     <li>
-                        <a href="{{route('mentor.list')}}">Mentors</a>
+                        <a href="{{route('pages.mentors')}}">Mentors</a>
                     </li>
                     <li>
-                        <a href="{{route('startup.list')}}">Startups</a>
-                    </li>
-                    <li>
-                        <a href="{{route('partner.list')}}">Partners</a>
+                        <a href="{{route('pages.startups')}}">Startups</a>
                     </li>
                 </ul>
             </div>

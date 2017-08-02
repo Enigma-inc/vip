@@ -18,10 +18,28 @@ class PagesController extends Controller
          $startups=Startup::orderByRaw("RAND()")
                             ->take(3)
                             ->get();
-         return view('welcome')->with([
+         return view('pages.home')->with([
            'partners'=>$partners,
            'mentors'=>$mentors,
            'startups'=>$startups
            ]);
+     }
+
+     public function about(){
+       return view('pages.about');
+     }
+     public function mentors(){
+          $mentors=Mentor::orderByRaw("RAND()")
+                            ->get();
+       return view('pages.mentors',[
+          'mentors'=>$mentors,
+       ]);
+     }
+     public function startups(){
+          $startups=Startup::orderByRaw("RAND()")
+                            ->get();
+       return view('pages.startups',[
+          'startups'=>$startups,
+       ]);
      }
 }

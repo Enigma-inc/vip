@@ -1,7 +1,7 @@
 <template>
   <div>
-    <section v-if="showBrief == 'true'" v-bind:style="{ backgroundImage: 'url(' + startupsBgImage + ')' }" class="padding-top-50 margin-top-30 padding-bottom-20 grid-news-hover pre-banner-1 bg-fixed parallax-bg fullscreen-banner valign-wrapper overlay"
-        data-stellar-background-ratio="0.5" style="background-position: 0% -513px; height: 315px;">
+    <section v-if="showBrief == 'true'" v-bind:style="{ backgroundImage: 'url(' + startupsBgImage + ')' }" class="slide-image"
+        data-stellar-background-ratio="0.5" >
         <div class="container">
 
             <div class="text-center mb-20">
@@ -77,7 +77,6 @@
             //GET LIST OF STARTUPS
             axios.get('../api/startups').then(res => {
                 if (res.data) {
-                    console.log();
                     this.startups = res.data;
                 }
             });
