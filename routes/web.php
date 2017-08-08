@@ -15,6 +15,7 @@ Route::get('/', 'PagesController@home')->name('pages.home');
 Route::get('/about', 'PagesController@about')->name('pages.about');
 Route::get('/mentors', 'PagesController@mentors')->name('pages.mentors');
 Route::get('/startups', 'PagesController@startups')->name('pages.startups');
+Route::get('session/{session}/apply','ApplicationController@create')->name('application.apply');
 
 
 
@@ -25,17 +26,14 @@ Route::prefix('api')->group(function () {
 });
 
 
-Route::prefix('portal')->group(function(){
-    
-});
 Route::prefix('admin')->group(function () {
 
     //Application Routes
     Route::get('application-sessions','ApplicationSessionController@index')->name('application.sessions.list');
     Route::get('application-sessions/create','ApplicationSessionController@create')->name('application.sessions.create');
     Route::post('application-sessions','ApplicationSessionController@store')->name('application.sessions.store');
-    Route::get('application-sessions/{session}/add-question/{question}','ApplicationSessionController@addQuestion')->name('application.sessions.add-question');
     Route::get('application-sessions/{session}/questions','ApplicationSessionController@sessionQuestionView')->name('application.sessions.question.list');
+    Route::get('api/application-sessions/{session}/add-question/{question}','ApplicationSessionController@addQuestion')->name('application.sessions.add-question');
     Route::get('api/application-sessions/{session}/questions','ApplicationSessionController@getSessionQuestions');
 
     Route::get('application-sessions/{id}/edit','ApplicationSessionController@edit')->name('application.sessions.edit');
@@ -44,11 +42,13 @@ Route::prefix('admin')->group(function () {
     Route::post('application-sessions/{id}/activate','ApplicationSessionController@activate')->name('application.sessions.activate');
     //Application Questions Categories
     Route::get('question-categories','QuestionCategoryController@index')->name('questions.categories.list');
+    Route::get('api/question-categories','QuestionCategoryController@categoryListApi')->name('questions.categories.listApi');
     Route::get('question-categories/create','QuestionCategoryController@create')->name('questions.categories.create');
     Route::post('question-categories','QuestionCategoryController@store')->name('questions.categories.store');
 
     //Application Questions
     Route::get('questions','ApplicationQuestionController@index')->name('questions.list');    
+    Route::get('api/questions','ApplicationQuestionController@getQuestions');    
     Route::get('questions/create','ApplicationQuestionController@create')->name('questions.create');    
     Route::post('questions','ApplicationQuestionController@store')->name('questions.store');    
 

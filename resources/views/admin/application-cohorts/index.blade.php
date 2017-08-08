@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-            <div class="co col-xs-12">
+            <div class=" col-xs-12">
             <a href="{{route('application.sessions.create')}}" class="btn btn-primary col-xs-12 col-sm-6 col-md-4 pull-right">Create Cohort</a>
             </div>
             <div class="panel panel-default">
@@ -17,7 +17,7 @@
                                 <th>Closing Date</th>
                                 <th>Status</th>
                                 <th>Questions</th>
-                                <th>Action</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,9 +28,9 @@
                                 <td>{{$session->closing_date}}</td>
                                 <td>{{$session->active}}</td>
                                 <td>{{$session->questions_count}}</td>
-                                <td></td>
                                 <td class="button-flex">
                                     <a href="{{route('application.sessions.edit',$session->id)}}"  class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Edit</a>
+                                    <a href="{{route('application.sessions.question.list',['session'=>$session->id])}}"  class="btn btn-primary btn-xs margin-right-5"><i class="fa fa-trash-o"></i>Manage Questions</a>
                                     @if($session->active == 1)
                                       <form action="{{route('application.sessions.deactivate',['id'=>$session->id])}}" method="POST">
                                         {{csrf_field()}}

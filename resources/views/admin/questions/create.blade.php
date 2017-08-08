@@ -62,11 +62,11 @@
             </div>
         </div>
     </div>
+    </div>
   @endsection
 
   @section('page-script')
-   <script>
-      
+   <script>      
       CKEDITOR.replace('ckeditor');
     </script>
   @endsection

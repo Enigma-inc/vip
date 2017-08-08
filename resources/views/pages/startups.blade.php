@@ -22,7 +22,7 @@
                     <div class="col-md-12">
                       @foreach($startups as $startup)
             
-                <div class="col-xs12 col-sm-6 col-md-4 item">
+                <div class="col-xs12 col-sm-6 col-lg-6 item">
                     <article class="post-wrapper card">
                         <div class="thumb-wrapper waves-effect waves-block waves-light">
                             <a href="#"><img src="{{$startup->logo}}" class="img-responsive" alt=""></a>

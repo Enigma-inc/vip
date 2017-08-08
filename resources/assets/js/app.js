@@ -14,9 +14,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('Slideshow', require('./components/slideshow'));
 Vue.component('Startups', require('./components/startups'));
-Vue.component('Headsup', require('./components/heads-up'));
 Vue.component('manage-sessions-question', require('./components/admin/manage-sessions-question'));
 
 const app = new Vue({

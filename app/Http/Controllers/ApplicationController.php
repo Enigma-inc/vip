@@ -4,27 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Application;
 use Illuminate\Http\Request;
+use App\ApplicationSession;
+use App\ApplicationAnswer;
 
 class ApplicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         //
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(ApplicationSession $session)
     {
-        //
+       if($session->answers()->count()==0)
+       {
+           $this->initailizeApplication($session->id);
+       }
+      $freshSession=ApplicationSession::with('questions','questions.category','answers')->find( $session->id);
+      return $freshSession;
+      return view('applications.apply')->with(['answers'=>$sessionAnswers]);
     }
 
     /**
@@ -33,9 +31,17 @@ class ApplicationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function initailizeApplication($sessionId)
     {
-        //
+        $session=ApplicationSession::with('questions')->find($sessionId);
+        
+        foreach ($session->questions as $question) {
+            // Add Empty answers that will be filled by user
+            ApplicationAnswer::create([
+                'question_id'=>$question->id,
+                'application_session_id'=>$sessionId
+            ]);
+        }
     }
 
     /**

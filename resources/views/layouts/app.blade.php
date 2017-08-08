@@ -11,6 +11,9 @@
     <title>{{ config('app.name', 'Vodacom Foundation') }}</title>
 
     <!-- Styles -->
+ 
+    <link rel="stylesheet" href="{{mix('css/paper-theme.css')}}">
+    <link rel="stylesheet" href="{{mix('css/vendor.css')}}">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>

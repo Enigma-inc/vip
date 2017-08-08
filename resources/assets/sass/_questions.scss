@@ -1,0 +1,9 @@
+.assign-questions {
+    .question-container {
+        display: flex;
+        align-items: flex-start;
+        p {
+            flex: 1;
+        }
+    }
+}

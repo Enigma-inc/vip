@@ -49,6 +49,8 @@ class ApplicationSessionController extends Controller
      */
     public function store(ApplicationSessionRequest $request)
     {
+       // dd(request('slide_title'));
+        
         $active = Input::has('active') ?true : false;
         $slideImage = $request->file('slide_image');
         $slideImageName = str_slug($request->input('slide_title')).'.'.$slideImage->getClientOriginalExtension();
@@ -68,20 +70,18 @@ class ApplicationSessionController extends Controller
         return redirect()->route('application.sessions.list');
     }
     public function getSessionQuestions(ApplicationSession $session)
-    {
-         
+    {         
         return $session->questions()->get();
     }
     public function sessionQuestionView(ApplicationSession $session,ApplicationQuestion $question)
-    {
-         
+    {         
          return view('admin.application-cohorts.session-questions');
     }
     public function addQuestion(ApplicationSession $session,ApplicationQuestion $question)
     {
          
         $session->questions()->toggle($question);
-       // return redirect()->route('application.sessions.list');
+        return response('Success', 200);
     }
 
 
@@ -137,6 +137,7 @@ class ApplicationSessionController extends Controller
         $applicationSession->active = $active;
         $applicationSession->slide_title=$request->input('slide_title');
         $applicationSession->slide_text=$request->input('slide_text');
+
        if($request->hasFile('slide_image')){     
         $slideImage = $request->file('slide_image');
         $slideImageName = str_slug($request->input('slide_title')).'.'.$slideImage->getClientOriginalExtension();
@@ -172,4 +173,5 @@ class ApplicationSessionController extends Controller
 
         return redirect()->route('application.sessions.list');
     }
+  
 }

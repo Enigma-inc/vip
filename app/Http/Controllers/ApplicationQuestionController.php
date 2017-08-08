@@ -20,6 +20,11 @@ class ApplicationQuestionController extends Controller
         $questions=ApplicationQuestion::with(['category'])->get();
         return view('admin.questions.index')->with(['questions'=>$questions]);
     }
+    public function getQuestions()
+    {
+        $questions=ApplicationQuestion::with(['category'])->get();
+        return $questions;
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -5,13 +5,26 @@
     }
     .team-wrapper {
         display: flex;
+        @media only screen and (max-width: 699px) {
+            display: block;
+        }
         .mentor-header-details {
             flex: 1;
             .team-title {
                 padding: 0 5px 0 5px;
                 display: flex;
                 h3 {
+                    font-size: 1.3em;
                     flex: 1;
+                    @media only screen and (max-width: 1011px) {
+                        font-size: .9em;
+                    }
+                    @media only screen and (max-width: 856px) {
+                        font-size: .7em;
+                    }
+                    @media only screen and (max-width: 699px) {
+                        font-size: 1.3em;
+                    }
                 }
                 ul {
                     margin: auto;
@@ -21,7 +34,8 @@
         .mentor-body-details {
             flex: 3;
             padding: 10px;
-            color: darken(#999, 10%)
+            color: darken(#999, 10%);
+            text-align: justify;
         }
     }
 }

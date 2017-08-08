@@ -54,7 +54,7 @@ class SlideshowController extends Controller
     public function resizebgImage(UploadedFile $bgImage, $bgImagePath)
     {
         $bgImageStream = Image::make($bgImage)
-                    ->fit(1050, 700)
+                    ->fit(1050, 400)
                     ->stream()
                     ->detach();
         $this->disk->put($bgImagePath, $bgImageStream, 'public');

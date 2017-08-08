@@ -11,7 +11,7 @@
                 <div class="row">
                    @foreach($partners as $partner)
                    
-                         <div class="col-md-3 col-sm-6" >
+                         <div class="col-md-3 col-sm-4 col-xs-6" >
                             <div class="border-box">
                                 <a href="{{$partner->web_link}}" target="_blank">
                                     <img src="{{Storage::url($partner->logo_path)}}" alt="Partner">

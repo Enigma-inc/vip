@@ -18,6 +18,12 @@ class QuestionCategoryController extends Controller
         $categories=QuestionCategory::all();
         return view('admin.questions.categories.index')->with(['categories'=>$categories]);
     }
+    public function categoryListApi()
+    {
+        $categories=QuestionCategory::with('questions')->get();
+        return $categories;
+        return view('admin.questions.categories.index')->with(['categories'=>$categories]);
+    }
 
     /**
      * Show the form for creating a new resource.

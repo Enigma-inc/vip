@@ -1,64 +1,17 @@
-
-.logo-rhomby{
-        position: fixed;
+.logo-rhomby {
+    position: fixed;
     z-index: 10000;
     top: -15px;
-    width: 40vw;
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-
-    top: -5px;
-    width: 40vw;
-}
-/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-   top: -20px;
-    width: 15vw;
-}
-/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width : 320px) {
-   top: -15px;
-    width: 40vw;
-}
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-    top: -15px;
-    width: 30vw;
-}
-/* iPads (landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-/* Styles */
-}
-/* iPads (portrait) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
-/* Styles */
-}
-/* Desktops and laptops ----------- */
-@media only screen
-and (min-width : 1224px) {
-/* Styles */
-}
-/* Large screens ----------- */
-@media only screen
-and (min-width : 1824px) {
-/* Styles */
-}
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-}
+    width: 200px;
+    @media only screen and (max-width: 600px) {
+        width: 150px;
+    }
+    @media only screen and (max-width: 768px) {
+        width: 150px;
+        top: -20px;
+    }
+    @media only screen and (max-width: 320px) {
+        width: 120px;
+        left: -10px;
+    }
 }
