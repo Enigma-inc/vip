@@ -16,6 +16,7 @@ window.Vue = require('vue');
 
 Vue.component('Startups', require('./components/startups'));
 Vue.component('manage-sessions-question', require('./components/admin/manage-sessions-question'));
+Vue.component('apply', require('./components/apply'));
 
 const app = new Vue({
     el: '#app'

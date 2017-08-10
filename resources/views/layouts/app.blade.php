@@ -95,9 +95,9 @@
 
     <!-- Scripts -->
     
-    <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ mix('vendor/bundle.js') }}"></script>
      <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
     @yield('page-script')
 </body>
 </html>

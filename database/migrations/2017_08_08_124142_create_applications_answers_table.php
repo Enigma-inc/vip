@@ -13,6 +13,7 @@ class CreateApplicationsAnswersTable extends Migration
             $table->text('answer')->nullable();
             $table->unsignedInteger('question_id');
             $table->unsignedInteger('application_session_id');
+            $table->unsignedInteger('user_id');
              $table->timestamps();
         });
     }

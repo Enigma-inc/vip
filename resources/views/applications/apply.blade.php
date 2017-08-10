@@ -1,8 +1,7 @@
   @extends('layouts.app')
 @section('content')
    <div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading">Apply</div>
-    </div>
+   
+   {{--  <apply :session-id="{{request()->route('session')->id}}"></apply>  --}}
    </div>
 @endsection

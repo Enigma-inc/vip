@@ -14,7 +14,11 @@ class ApplicationQuestion extends Model
         return $this->belongsToMany(ApplicationSession::class);
     }
 
+    public function answers(){
+        return $this->hasMany(ApplicationAnswer::class);
+    }
     public function category(){
         return $this->belongsTo(QuestionCategory::class,'question_category_id');
     }
+
 }
