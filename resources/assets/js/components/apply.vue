@@ -1,69 +1,73 @@
 <template>
   <div class="assign-questions">
-        <div class="panel panel-primary" v-for="category in allQuestions" :key="category.id">
+         <div class="panel panel-primary" v-for="category in questionCategories" :key="category.id">
             <div class="panel-heading">
                 {{category.name}}
             </div>
             <div class="panel-body">
-                <div class="question-container" v-for="question in category.questions" :key="question.id">
-                     <!-- <input type="checkbox" @click="toggleSessionQuestion(question)" :checked="questionAssigned(question)"> -->
-                     <p  v-html="question.question"></p>
-                      <vue-editor v-model="question.answer" ></vue-editor>
+                <div class="question-container" v-for="answer in category.answers" :key="answer.answerId">
+                     <p  v-html="answer.question" class="ckeditor col-xs-12"></p>
+                      <textarea class="summernote col-xs-12" :id="answer.editorId" v-model="answer.answerText" ></textarea>
+                      <hr/>
                 </div>
             </div>
         </div>
-        <button class="btn" @click='submit()'>Submit</button>
+          <el-row :gutter="100">
+                <vue-summernote ref="editer"></vue-summernote>
+                <vue-summernote ref="editer1"></vue-summernote>
+            </el-row
+        <button class="btn" @click='submit()'>Submit</button> 
    
   </div>
 </template>
 <script>
-import { VueEditor } from 'vue2-editor'
+import VueSummernote from 'vue-summernote'
 import toastr from 'toastr';
     export default{
          components: {
-               VueEditor
+               VueSummernote
          },
-        props:['sessionId'],
+        props:['sessionId','inputCategories','inputAnswers'],
         data(){
             return{
-                content: '<h1>Editor 1 Starting Content</h1>',
-                allQuestions:[],
-                sessionQuestions:[]
-                
+                questionCategories:[]
             }
         },
         mounted(){
-           this.getAllQuestions();
-           this.getSessionQuestions();
+            this.buildQuestions();
+           
         },
         methods:{
-            submit(){
-                console.log(this.allQuestions.questions);
-            },
-            getSessionQuestions(){
-                axios.get(`../../../admin/api/application-sessions/${this.sessionId}/questions`).then(res=>{
-                    this.sessionQuestions=res.data;
-                });
-            },
-            getAllQuestions(){
-                axios.get(`../../../admin/api/question-categories`).then(res=>{
-                    this.allQuestions=res.data;
-                });
-            },
-           questionAssigned(question){
-               let found =false;
-                _.forEach(this.sessionQuestions,(item)=>{
-                     if(item.id==question.id){
-                        found= true;
-                     }
-                 });
-                 return found;
-                },
-            toggleSessionQuestion(question){
-                    axios.get(`../../../admin/api/application-sessions/${this.sessionId}/add-question/${question.id}`).then(()=>{
-                        toastr.success('Succss!')
+            buildQuestions(){
+                this.inputCategories.forEach(function(category) {
+                    let ans=[];
+                    this.inputAnswers.forEach(function(answer){
+                        if(answer.categoryId==category.id){
+                            ans.push({
+                                "editorId":'editor'+answer.answerId,
+                                "answerId": answer.answerId,
+                                "answerText": answer.answer,
+                                "questionId": answer.questionId,
+                                "question": answer.question,
+                                "categoryId": answer.categoryId,
+                                "categoryName": answer.categoryName
+                            });
+                            
+                        }
+                    },this);
+                    this.questionCategories.push({
+                        id:category.id,
+                        name:category.name,
+                        index:category.index,
+                        answers:ans
                     });
-            }  
+                }, this);
+            },
+            submit(){
+                axios.post(`../../session/${this.sessionId}/apply`,this.questionCategories).then(response=>{
+                    console.log("Server Response...",this.response);
+                });
+            },
 
                 
         },
@@ -72,3 +76,10 @@ import toastr from 'toastr';
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    .question-container{
+        display:flex;
+        flex-direction: column;
+    }
+</style>

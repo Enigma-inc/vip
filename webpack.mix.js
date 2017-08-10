@@ -26,6 +26,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
         "resources/assets/theme/css/skins/vodacom.css",
         "resources/assets/theme/css/skins/admin.css",
         "node_modules/toastr/build/toastr.min.css",
+        "public/vendor/summernote/summernote.css",
     ], 'public/css/vendor.css')
     .scripts(['node_modules/jquery/dist/jquery.js',
         'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',

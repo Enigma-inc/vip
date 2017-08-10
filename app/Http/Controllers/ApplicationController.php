@@ -30,7 +30,6 @@ class ApplicationController extends Controller
            $this->initailizeApplication($session->id);
        }
        $categories=QuestionCategory::all();
-       return $categories;
        $answers=DB::table('application_answers')
                     ->select('application_answers.id as answerId','application_answers.answer',
                     'application_questions.id as questionId','application_questions.question',
@@ -43,12 +42,32 @@ class ApplicationController extends Controller
                     ->get();
 
 
-        return $answers;
 
-
-
-
-      return view('applications.apply');
+     $modifiedCategories=array();
+     foreach ($categories as  $category) {
+         $ans=array();
+         foreach ($answers as  $answer) {
+              if($answer->categoryId==$category->id){
+                          array_push($ans,[
+                                "answerId" => $answer->answerId,
+                                "answerText" => $answer->answer,
+                                "questionId" => $answer->questionId,
+                                "question" => $answer->question,
+                                "categoryId" => $answer->categoryId,
+                                "categoryName" => $answer->categoryName
+                          ]);
+                            
+                        }
+         }
+       array_push($modifiedCategories,[
+            "id"=> $category->id,
+            "name"=> $category->name,
+            "index"=> $category->index,
+             "answers"=>$ans
+       ]);
+     }
+     
+      return view('applications.apply')->with(['categories'=>$modifiedCategories]);
     }
 
     /**
@@ -78,9 +97,23 @@ class ApplicationController extends Controller
      * @param  \App\Application  $application
      * @return \Illuminate\Http\Response
      */
-    public function show(Application $application)
+    public function store(Request $request,$sessionId)
     {
-        //
+        // Save user questions
+        $categories=$request->toArray();
+        dd($categories);
+        foreach ($categories as $category) {
+            foreach ($category['answers'] as $answer) {
+                $ans=ApplicationAnswer::where('question_id','=',$answer['questionId'])
+                                        ->where('application_session_id','=',$sessionId)
+                                        ->where('user_id','=',Auth::User()->id)
+                                        ->first();
+                $ans->answer=$answer['answerText'];
+                 $ans->save();
+            }
+        }
+       
+
     }
 
     /**
