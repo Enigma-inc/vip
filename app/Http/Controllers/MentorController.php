@@ -70,6 +70,7 @@ class MentorController extends Controller
                     ->stream()
                     ->detach();
         $this->disk->put($mentorImagePath, $imageStream, 'public');
+                        dd($imageStream);
 
     }
 
