@@ -4,6 +4,6 @@
     "/css/paper-theme.css": "/css/paper-theme.css",
     "/css/theme-bundle.css": "/css/theme-bundle.css",
     "/css/vendor.css": "/css/vendor.css",
-    "/css/vendor-front.css": "/css/vendor-front.css",
+    "/css/front-theme-bundle.css": "/css/front-theme-bundle.css",
     "/vendor/bundle.js": "/vendor/bundle.js"
 }

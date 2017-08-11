@@ -29,9 +29,15 @@ mix.js('resources/assets/js/app.js', 'public/js')
         "node_modules/vueditor/dist/style/vueditor.min.css",
     ], 'public/css/vendor.css')
     .styles([
+        "resources/assets/theme/bootstrap/css/bootstrap.css",
+        "node_modules/font-awesome/css/font-awesome.min.css",
+        "resources/assets/theme/css/materialize/css/materialize.min.css",
+        "resources/assets/theme/fonts/iconfont/material-icons.css",
+        "resources/assets/theme/css/shortcodes/combined/shortcodes.css",
+        "resources/assets/theme/css/style.css",
         "resources/assets/theme/css/helpers.css",
         "resources/assets/theme/css/skins/vodacom.css",
-    ], 'public/css/vendor-front.css')
+    ], 'public/css/front-theme-bundle.css')
     .scripts(['node_modules/jquery/dist/jquery.js',
         'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
         'node_modules/slick-carousel/slick/slick.js',

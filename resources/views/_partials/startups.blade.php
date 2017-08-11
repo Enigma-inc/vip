@@ -1,4 +1,4 @@
-    <section style="background-image: url('./img/startups-cover.jpg')" class="padding-top-50 margin-top-50 padding-bottom-20 grid-news-hover pre-banner-1 bg-fixed parallax-bg fullscreen-banner valign-wrapper overlay home-page-startups"
+    <section style="background-image: url('./img/startups-cover.jpg')" class="padding-top-50 margin-top-10 padding-bottom-20 grid-news-hover pre-banner-1 bg-fixed parallax-bg fullscreen-banner valign-wrapper overlay home-page-startups"
         data-stellar-background-ratio="0.5" style="background-position: 0% -513px; height: 315px;">
         <div class="container">
 
