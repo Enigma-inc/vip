@@ -157,6 +157,32 @@ Route::prefix('admin')->group(function () {
         'uses' => 'PartnerController@destroy',
         'as' => 'partner.delete'
     ]);
+
+        //Heads-Up routes
+    Route::get('heads-up',[
+        'uses' => 'HeadsUpController@index',
+        'as' => 'heads-up.list'
+    ]);
+    Route::get('heads-up/create',[
+        'uses' => 'HeadsUpController@create',
+        'as' => 'heads-up.create'
+    ]);
+    Route::post('heads-up',[
+        'uses' => 'HeadsUpController@store',
+        'as' => 'heads-up.store'
+    ]);
+    Route::get('heads-up/{id}/edit',[
+        'uses'=> 'HeadsUpController@edit',
+        'as'=>'heads-up.edit'
+    ]);
+    Route::patch('heads-up/{id}/edit',[
+        'uses' => 'HeadsUpController@update',
+        'as'=>'heads-up.update'
+    ]);
+    Route::post('heads-up/{id}/delete',[
+        'uses' => 'HeadsUpController@destroy',
+        'as' => 'heads-up.delete'
+    ]);
 });
 Auth::routes();
 

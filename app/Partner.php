@@ -15,3 +15,4 @@ class Partner extends Model
         'name', 'logo_path', 'web_link',  
         ];
 }
+ 
