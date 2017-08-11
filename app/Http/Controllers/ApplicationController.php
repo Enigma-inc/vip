@@ -42,32 +42,7 @@ class ApplicationController extends Controller
                     ->get();
 
 
-
-     $modifiedCategories=array();
-     foreach ($categories as  $category) {
-         $ans=array();
-         foreach ($answers as  $answer) {
-              if($answer->categoryId==$category->id){
-                          array_push($ans,[
-                                "answerId" => $answer->answerId,
-                                "answerText" => $answer->answer,
-                                "questionId" => $answer->questionId,
-                                "question" => $answer->question,
-                                "categoryId" => $answer->categoryId,
-                                "categoryName" => $answer->categoryName
-                          ]);
-                            
-                        }
-         }
-       array_push($modifiedCategories,[
-            "id"=> $category->id,
-            "name"=> $category->name,
-            "index"=> $category->index,
-             "answers"=>$ans
-       ]);
-     }
-     
-      return view('applications.apply')->with(['categories'=>$modifiedCategories]);
+      return view('applications.apply')->with(['categories'=>$categories,'answers'=>$answers]);
     }
 
     /**
@@ -101,13 +76,13 @@ class ApplicationController extends Controller
     {
         // Save user questions
         $categories=$request->toArray();
-        dd($categories);
         foreach ($categories as $category) {
             foreach ($category['answers'] as $answer) {
                 $ans=ApplicationAnswer::where('question_id','=',$answer['questionId'])
                                         ->where('application_session_id','=',$sessionId)
                                         ->where('user_id','=',Auth::User()->id)
                                         ->first();
+                                        dd($answer['answerText']);
                 $ans->answer=$answer['answerText'];
                  $ans->save();
             }

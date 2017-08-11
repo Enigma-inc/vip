@@ -65,9 +65,3 @@
     </div>
   @endsection
 
-  @section('page-script')
-
-   <script>      
-      CKEDITOR.replace('ckeditor');
-    </script>
-  @endsection

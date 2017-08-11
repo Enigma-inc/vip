@@ -7,6 +7,7 @@ use App\Partner;
 use App\Mentor;
 use App\Startup;
 use App\Slideshow;
+use App\HeadsUp;
 
 
 class PagesController extends Controller
@@ -20,6 +21,7 @@ class PagesController extends Controller
          $startups=Startup::orderByRaw("RAND()")
                             ->take(3)
                             ->get();
+         $headsup=HeadsUp::all();
 
          $slides=Slideshow::all();
          
@@ -27,7 +29,8 @@ class PagesController extends Controller
            'partners'=>$partners,
            'mentors'=>$mentors,
            'startups'=>$startups,
-           'slides'=>$slides
+           'slides'=>$slides,
+           'headsup'=> $headsup
            ]);
      }
 

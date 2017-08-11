@@ -23,11 +23,15 @@ mix.js('resources/assets/js/app.js', 'public/js')
     ], 'public/css/theme-bundle.css')
     .styles([
         "resources/assets/theme/css/helpers.css",
-        "resources/assets/theme/css/skins/vodacom.css",
         "resources/assets/theme/css/skins/admin.css",
+        "resources/assets/theme/css/skins/vodacom.css",
         "node_modules/toastr/build/toastr.min.css",
-        "public/vendor/summernote/summernote.css",
+        "node_modules/vueditor/dist/style/vueditor.min.css",
     ], 'public/css/vendor.css')
+    .styles([
+        "resources/assets/theme/css/helpers.css",
+        "resources/assets/theme/css/skins/vodacom.css",
+    ], 'public/css/vendor-front.css')
     .scripts(['node_modules/jquery/dist/jquery.js',
         'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
         'node_modules/slick-carousel/slick/slick.js',

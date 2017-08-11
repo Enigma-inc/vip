@@ -22,10 +22,9 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
 
     <!--inject:css-->
-    <link rel="stylesheet" href="{{mix('css/paper-theme.css')}}">
-    <link rel="stylesheet" href="{{mix('css/theme-bundle.css')}}">
-    <link rel="stylesheet" href="{{mix('css/vendor.css')}}">
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
+    <link rel="stylesheet" href="{{mix('css/theme-bundle.css')}}">
+    <link rel="stylesheet" href="{{mix('css/vendor-front.css')}}">
     <!--endinject-->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css" />

@@ -12,25 +12,23 @@
                 </div>
             </div>
         </div>
-          <el-row :gutter="100">
-                <vue-summernote ref="editer"></vue-summernote>
-                <vue-summernote ref="editer1"></vue-summernote>
-            </el-row
+      
+        <Vueditor></Vueditor>
         <button class="btn" @click='submit()'>Submit</button> 
    
   </div>
 </template>
 <script>
-import VueSummernote from 'vue-summernote'
 import toastr from 'toastr';
     export default{
-         components: {
-               VueSummernote
-         },
         props:['sessionId','inputCategories','inputAnswers'],
         data(){
             return{
-                questionCategories:[]
+                questionCategories:[],
+
+
+                   contentA: '',
+                   contentB: ''
             }
         },
         mounted(){
