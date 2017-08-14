@@ -5,13 +5,13 @@
         <div class="co col-xs-12">
             <a href="{{route('startup.create')}}" class="btn btn-primary col-xs-12 col-sm-6 col-md-4 pull-right">Add startup</a>
         </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">startups</div>
+            <div class="panel ">
+                <div class="panel-heading text-primary">Startups</div>
             <div class="panel-body">
     @foreach($startups as $startup)  
         <div class="col-md-4 profile margin-top-5">
                   
-            <div class="panel panel-default bordered">
+            <div class="panel  panel-primary bordered" style="height:500px;">
                 <div class="panel-heading">
                     <div class="header">{{$startup->name}}</div>
                 </div>

@@ -58,7 +58,7 @@ class HeadsUpController extends Controller
             'title'=>$request->input('title'),
             'url'=>$request->input('url'),
             'image_path' =>$headsUpImagePath,
-            'body' =>$request->input('body'), 
+            // 'body' =>$request->input('body'), 
         ]);
          
          $resizedHeadsUpImage = $this->resizeHeadsUpImage($headsUpImage, $headsUpImagePath);
@@ -115,7 +115,7 @@ class HeadsUpController extends Controller
        
         $headsUp->title = $request->input('title');
         $headsUp->url = $request->input('url');
-        $headsUp->body = $request->input('body');
+        // $headsUp->body = $request->input('body');
         if($request->hasFile('image'))
         {
             $headsUpImage = $request->file('image');

@@ -5,13 +5,13 @@
         <div class="co col-xs-12">
             <a href="{{route('slideshow.create')}}" class="btn btn-primary col-xs-12 col-sm-6 col-md-4 pull-right">Add Slideshow</a>
         </div>
-            <div class="panel panel-default">
+            <div class="panel">
                 <div class="panel-heading">slideshows</div>
             <div class="panel-body">
     @foreach($slideshows as $slideshow)  
-        <div class="col-md-4 profile margin-top-5">
+        <div class="col-md-6 profile margin-top-5" >
                   
-            <div class="panel panel-default bordered">
+            <div class="panel  panel-primary bordered" style="height:470px;">
                 <div class="panel-heading">
                     <div class="header">{{$slideshow->title}}</div>
                 </div>

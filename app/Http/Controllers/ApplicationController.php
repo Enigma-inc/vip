@@ -24,25 +24,7 @@ class ApplicationController extends Controller
     }
     public function create(ApplicationSession $session)
     {
-        $userId=Auth::User()->id;
-       if($session->answers()->count()==0)
-       {
-           $this->initailizeApplication($session->id);
-       }
-       $categories=QuestionCategory::all();
-       $answers=DB::table('application_answers')
-                    ->select('application_answers.id as answerId','application_answers.answer',
-                    'application_questions.id as questionId','application_questions.question',
-                    'application_questions.question_category_id as categoryId','question_categories.name as categoryName')
-                    ->join('application_questions','application_answers.question_id','application_questions.id')
-                    ->join('question_categories','question_categories.id','application_questions.question_category_id')                    
-                    ->join('application_sessions','application_sessions.id','application_answers.application_session_id')
-                    ->where('application_answers.application_session_id','=',$session->id)
-                    ->where('application_answers.user_id','=',$userId)
-                    ->get();
-
-
-      return view('applications.apply')->with(['categories'=>$categories,'answers'=>$answers]);
+             return view('applications.apply');
     }
 
     /**

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel  panel-primary">
                 <div class="panel-heading">Edit Slideshow</div>
                 <div class="panel-body">
                     {!! Form::model($slideshow,['method'=>'PATCH','route' => ['slideshow.update', $slideshow->id],'class'=>'form-horizontal','enctype' => 'multipart/form-data' ]) !!}

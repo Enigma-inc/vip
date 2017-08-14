@@ -3,7 +3,7 @@
       <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel  panel-primary">
                 <div class="panel-heading">Add Category</div>
                 <div class="panel-body">
                    {!! Form::open(['method' => 'POST','route'=>'questions.categories.store' , 'class'=>'form-horizontal', 'enctype' => 'multipart/form-data']) !!}

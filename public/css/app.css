@@ -342,7 +342,8 @@ div.required label:after {
 }
 
 .profile .details-container .mentor-label {
-  color: #9c9c9c;
+  color: #908f8f;
+  margin-right: 5px;
 }
 
 .profile hr {

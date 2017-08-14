@@ -27,7 +27,7 @@ class HeadsUpRequest extends FormRequest
             'title' => 'required',
             'url' => 'required',
             'image' => 'required',
-            'body' => 'required'
+            // 'body' => 'required'
         ];
     }
 }

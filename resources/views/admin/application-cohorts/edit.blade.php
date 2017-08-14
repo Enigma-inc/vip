@@ -1,7 +1,7 @@
  @extends('layouts.app')
  @section('content')
       <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel  panel-primary">
                 <div class="panel-heading">Create Cohort</div>
                 <div class="panel-body">
          {!! Form::model($applicationSession,['method'=>'PATCH','route' => ['application.sessions.update', $applicationSession->id],'class'=>'form-horizontal','enctype' => 'multipart/form-data' ]) !!}

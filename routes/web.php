@@ -16,7 +16,8 @@ Route::get('/about', 'PagesController@about')->name('pages.about');
 Route::get('/mentors', 'PagesController@mentors')->name('pages.mentors');
 Route::get('/startups', 'PagesController@startups')->name('pages.startups');
 Route::get('session/{session}/apply','ApplicationController@create')->name('application.apply');
-Route::post('session/{session}/apply','ApplicationController@store')->name('application.apply.store');
+Route::get('session/{session}/submit','ApplicationDocumentController@create')->name('application.apply.create');
+Route::post('session/{session}/submit','ApplicationDocumentController@store')->name('application.apply.store');
 
 
 
