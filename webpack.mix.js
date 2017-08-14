@@ -51,4 +51,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
         "resources/assets/theme/js/theme/scripts.js"
     ], 'public/vendor/bundle.js')
     .autoload({ 'jquery': ['window.$', 'window.jQuery'] })
-    .copyDirectory('node_modules/font-awesome/fonts', 'public/fonts');
+    .copyDirectory('node_modules/font-awesome/fonts', 'public/fonts')
+    .version();

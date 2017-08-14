@@ -1,9 +1,9 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/paper-theme.css": "/css/paper-theme.css",
-    "/css/theme-bundle.css": "/css/theme-bundle.css",
-    "/css/vendor.css": "/css/vendor.css",
-    "/css/front-theme-bundle.css": "/css/front-theme-bundle.css",
-    "/vendor/bundle.js": "/vendor/bundle.js"
+    "/js/app.js": "/js/app.js?id=2b58308736f22b9bfc9c",
+    "/css/app.css": "/css/app.css?id=c31aa179dbb1bc77502d",
+    "/css/paper-theme.css": "/css/paper-theme.css?id=fdf0ea082bdee8d120c6",
+    "/css/theme-bundle.css": "/css/theme-bundle.css?id=e8a881d201942269db06",
+    "/css/vendor.css": "/css/vendor.css?id=913122e7560bd8bfd72e",
+    "/css/front-theme-bundle.css": "/css/front-theme-bundle.css?id=d68d7bc2401276ac917c",
+    "/vendor/bundle.js": "/vendor/bundle.js?id=edc60ed7b70eaabc8089"
 }
