@@ -35,6 +35,18 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('button_text') ? ' has-error' : '' }}">
+                            <label for="button_text" class="col-md-4 control-label">Button Text</label>
+
+                            <div class="col-md-6">
+                            {!! Form::text('button_text',null,['class' => 'form-control'])!!}
+                                @if ($errors->has('button_text'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('button_text') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('background_image') ? ' has-error' : '' }}">
                             <label for="background_image" class="col-md-4 control-label">Background Image</label>

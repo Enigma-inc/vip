@@ -14,7 +14,7 @@
         }
         .slide-title {
             font-size: 50px;
-            font-weight: 900;
+            font-weight: 900 !important;
             line-height: 22px;
             @media only screen and (max-width: 1300px) {
                 font-weight: 600;

@@ -97,19 +97,16 @@
         <div class="container">
             <ul>
                 <li>
-                    <a href="{{route('home')}}">Home</a>
+                    <a href="{{route('pages.home')}}">Home</a>
                 </li>
                 <li>
-                    <a href="./about">About</a>
+                    <a href="{{route('pages.about')}}">About</a>
                 </li>
                 <li>
-                    <a href="{{route('mentor.list')}}">Mentors</a>
+                    <a href="{{route('pages.mentors')}}">Mentors</a>
                 </li>
                 <li>
-                    <a href="{{route('startup.list')}}">Startups</a>
-                </li>
-                <li>
-                    <a href="{{route('partner.list')}}">Partners</a>
+                    <a href="{{route('pages.startups')}}">Startups</a>
                 </li>
             </ul>
         </div>

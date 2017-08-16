@@ -26,7 +26,7 @@ class SlideshowRequest extends FormRequest
         return [
             'title' => 'required|max:255',
             'description' => 'required',
-            'button_link' => 'required',
+         //   'button_link' => 'required',
             'background_image' => 'required'
         ];
     } 

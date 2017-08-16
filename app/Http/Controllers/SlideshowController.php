@@ -43,6 +43,7 @@ class SlideshowController extends Controller
             'title'=>$request->input('title'),
             'description'=>$request->input('description'),
             'button_link' =>$request->input('button_link'),
+            'button_text' =>$request->input('button_text'),
             'bgImage_path' =>$bgImagePath
         ]);
 
@@ -75,6 +76,7 @@ class SlideshowController extends Controller
         $slideshow->title=$request->input('title');
         $slideshow->description=$request->input('description');
         $slideshow->button_link=$request->input('button_link');
+        $slideshow->button_text=$request->input('button_text');
 
         if($request->hasFile('background_image')){
         $bgImage = $request->file('background_image');

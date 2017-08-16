@@ -30,6 +30,10 @@
                         <div class="mentor-label">Button Link</div>
                         <div class="mentor-info"><a href="{{$slideshow->web_link}}">{{$slideshow->button_link}}</a></div>
                     </div>
+                    <div class="details-container">
+                        <div class="mentor-label">Button Text</div>
+                        <div class="mentor-info">{{$slideshow->button_text}}</a></div>
+                    </div>
                     <hr>
                      <div class="details-container">
                         <div class="mentor-info">{{$slideshow->description}}</div>

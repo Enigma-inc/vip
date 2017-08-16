@@ -12,7 +12,7 @@ class Slideshow extends Model
 
     protected $dates = ['deleted_at'];
     protected $fillable = [
-        'title', 'bgImage_path', 'description', 'button_link', 
+        'title', 'bgImage_path', 'description', 'button_link', 'button_text'
     ];
     protected $hidden=['created_at','updated_at','bgImage_path'];
 

@@ -5,7 +5,7 @@
                     <div class="slide-container">
                             <h1 class="slide-title text-uppercase white-text flex-item" style="z-index:20">{{$slide->title}}</h1>
                             <span class="sub-description lead white-text flex-item" style="z-index:20" >{{$slide->description}}</span>
-                            <a target="_blank" href="#" style="z-index:20"  class="btn btn-lg vodacom waves-effect waves-light flex-item">
+                            <a target="_blank" href="{{$slide->button_link}}" style="z-index:20"  class="btn btn-lg vodacom waves-effect waves-light flex-item">
                                   Apply Now
                             </a>
         </div>
