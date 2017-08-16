@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vodacom Foundation</title>
+    <title>Vodacom Innovation Park</title>
 
-    <link rel="canonical" href="http://www.vodacomfoundation.co.ls" />
-    <meta property="og:title" content="Vodacom Foundation" />
+    <link rel="canonical" href="http://www.innovationpark.co.ls" />
+    <meta property="og:title" content="Vodacom Innovation Park" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="htttp://www.vodacomfoudation.co.ls" />
-    <meta property="og:image" content="./images/Pool.jpg" />
-    <meta property="og:description" content="Lancers Inn is an affordable, central and convenient hotel in Maseru, Lesotho providing quality accommodation for business travelers and tourists." />
+    <meta property="og:url" content="http://www.innovationpark.co.ls" />
+    <meta property="og:image" content="{{asset('images/innovationpark.jpg')}}" />
+    <meta property="og:description" content="The Innovation Park is an incubation and acceleration program for budding entrepreneurs in any area of business, that are looking to leverage the power of technology and mobile communications to differentiate, and make their businesses more competitive and productive." />
 
-    <meta name="description" content="Lancers Inn is an affordable, central and convenient hotel in Maseru, Lesotho providing quality accommodation for business travelers and tourists.">
-    <meta name="keywords" content="Lesotho Tourism, Lesotho Accommodation, Maseru Accommodation, Maseru Hotel, Business Travel, Lancers Inn, Lancers">
-    <meta name="application-name" content="Lancers Inn">
+    <meta name="description" content="The Innovation Park is an incubation and acceleration program for budding entrepreneurs in any area of business, that are looking to leverage the power of technology and mobile communications to differentiate, and make their businesses more competitive and productive.">
+    <meta name="keywords" content="Vodacom, Vodafone Innovation park, Vodacom Innovation Park">
+    <meta name="application-name" content="Vodacom Innovation Park">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
