@@ -29,6 +29,8 @@ Route::prefix('api')->group(function () {
 
 
 Route::prefix('admin')->group(function () {
+    // Admin Pages
+    Route::get('/', 'PagesController@admin')->name('pages.admin');
 
     //Application Routes
     Route::get('application-sessions','ApplicationSessionController@index')->name('application.sessions.list');

@@ -51,4 +51,8 @@ class PagesController extends Controller
           'startups'=>$startups,
        ]);
      }
+     public function admin(){
+
+       return view('admin.home');
+     }
 }
