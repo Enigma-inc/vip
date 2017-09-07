@@ -39,3 +39,14 @@
         }
     }
 }
+
+.admin-mentors-page{
+  .bio{
+    height: 200px;
+    overflow-y: scroll;
+    .mentor-info{
+      text-align: justify;
+      padding-right: 5px;
+    }
+  }
+}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Mentor;
 use Illuminate\Http\Request;
 use App\Http\Requests\MentorRequest;
+use App\Http\Requests\MentorEditRequest;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -47,19 +48,19 @@ class MentorController extends Controller
      * @return Response
      */
     public function store(MentorRequest $request)
-    {   
+    {
         $mentorImage = $request->file('mentor-image');
         $mentorImageName = str_slug($request->input('name')).'.'.$mentorImage->getClientOriginalExtension();
-        $mentorImagePath = "mentor-images/".$mentorImageName; 
-    
+        $mentorImagePath = "mentor-images/".$mentorImageName;
+
         Mentor::create([
             'name'=>$request->input('name'),
             'website_link'=>$request->input('web-link'),
-            'linkedin' =>$request->input('linkedIn'), 
+            'linkedin' =>$request->input('linkedIn'),
             'image_path' =>$mentorImagePath,
-            'bio' => $request->input('bio') 
+            'bio' => $request->input('bio')
         ]);
-         
+
          $resizedmentorImage = $this->resizementorImage($mentorImage, $mentorImagePath);
          return redirect()->route('mentor.list');
     }
@@ -101,7 +102,7 @@ class MentorController extends Controller
         else{
             return redirect()->route('mentor.list');
         }
-      
+
     }
 
     /**
@@ -110,25 +111,27 @@ class MentorController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(MentorRequest $request,Mentor $mentor)
+    public function update(MentorEditRequest $request,Mentor $mentor)
     {
-       
+
         $mentor->name=$request->input('name');
         $mentor->website_link=$request->input('web-link');
         $mentor->bio = $request->input('bio');
+
         if($request->hasFile('mentor-image')){
         $mentorImage = $request->file('mentor-image');
         $mentorImageName = str_slug($request->input('name')).'.'.$mentorImage->getClientOriginalExtension();
-       
-        $mentorImagePath = "mentor-images/".$mentorImageName; 
-         
+
+        $mentorImagePath = "mentor-images/".$mentorImageName;
+
         $resizedMentorImage = $this->resizementorImage($mentorImage, $mentorImagePath);
         $mentor ->image_path = $mentorImagePath;
         }
-        $mentor->save();
         
+        $mentor->save();
+
         return redirect()->route('mentor.list');
-       
+
     }
 
     /**

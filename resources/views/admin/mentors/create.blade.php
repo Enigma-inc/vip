@@ -8,12 +8,12 @@
                 <div class="panel-heading">Add Mentor</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('mentor.store') }}" enctype="multipart/form-data">
-                        {{ csrf_field() }} 
+                        {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
@@ -26,7 +26,7 @@
                         <div class="form-group{{ $errors->has('linkedIn') ? ' has-error' : '' }}">
                             <label for="linkedIn" class="col-md-4 control-label">LinkedIn Profile</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="linkedIn" type="url" class="form-control" name="linkedIn" value="{{ old('linkedIn') }}" >
 
                                 @if ($errors->has('linkedIn'))
@@ -39,7 +39,7 @@
                         <div class="form-group{{ $errors->has('website-link') ? ' has-error' : '' }}">
                             <label for="website-link" class="col-md-4 control-label">Website Link</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="web-link" type="url" class="form-control" name="web-link" value="{{ old('web-link') }}" >
 
                                 @if ($errors->has('web-link'))
@@ -52,7 +52,7 @@
                         <div class="form-group{{ $errors->has('mentor-image') ? ' has-error' : '' }}">
                             <label for="mentor-image" class="col-md-4 control-label">Mentor Image</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="mentor-image" type="file" class="form-control" name="mentor-image"
                                   accept=".jpg, .png, .jpeg">
 
@@ -66,16 +66,16 @@
                         <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
                             <label for="bio" class="col-md-4 control-label">Biography</label>
 
-                            <div class="col-md-6">
-                                <textarea name="bio" rows="5" class="form-control"></textarea> 
+                            <div class="col-md-8">
+                                <textarea name="bio" rows="5" class="form-control"></textarea>
                                 @if ($errors->has('bio'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('bio') }}</strong>
-                                    </span> 
+                                    </span>
                                 @endif
                             </div>
                         </div>
-   
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -89,4 +89,13 @@
         </div>
     </div>
 </div>
+@endsection
+@section('page-script')
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('textarea').summernote({
+            height:300,
+          });
+      });
+  </script>
 @endsection

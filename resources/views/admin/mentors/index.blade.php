@@ -1,16 +1,16 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container admin-mentors-page">
     <div class="row">
         <div class="co col-xs-12">
             <a href="{{route('mentor.create')}}" class="btn btn-primary col-xs-12 col-sm-6 col-md-4 pull-right">Add Mentor</a>
         </div>
             <div class="panel ">
-                <div class="panel-heading">Mentors</div>
+                <div class="panel-heading text-primary">Mentors</div>
             <div class="panel-body">
-    @foreach($mentors as $mentor)  
+    @foreach($mentors as $mentor)
         <div class="col-md-4 profile margin-top-5">
-                  
+
             <div class="panel  panel-primary bordered">
                 <div class="panel-heading">
                     <div class="header">{{$mentor->name}}</div>
@@ -37,8 +37,8 @@
                         <div class="mentor-info"><a href="{{$mentor->linkedin}}">{{$mentor->linkedin}}</a></div>
                     </div>
                     <hr>
-                     <div class="details-container">
-                        <div class="mentor-info">{{$mentor->bio}}</div>
+                     <div class="details-container bio">
+                        <div class="mentor-info">{!!$mentor->bio!!}</div>
                     </div>
                     <hr>
 
@@ -53,10 +53,10 @@
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
-      @endforeach 
-      
+      @endforeach
+
       </div>
       </div>
     </div>

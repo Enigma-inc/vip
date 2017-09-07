@@ -69,11 +69,11 @@
                                 @if ($errors->has('bio'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('bio') }}</strong>
-                                    </span> 
+                                    </span>
                                 @endif
                             </div>
                         </div>
-   
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -87,4 +87,13 @@
         </div>
     </div>
 </div>
+@endsection
+@section('page-script')
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('textarea').summernote({
+            height:300,
+          });
+      });
+  </script>
 @endsection

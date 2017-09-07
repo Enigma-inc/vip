@@ -27,6 +27,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
         "resources/assets/theme/css/skins/vodacom.css",
         "node_modules/toastr/build/toastr.min.css",
         "node_modules/vueditor/dist/style/vueditor.min.css",
+        'node_modules/summernote/dist/summernote.css',
     ], 'public/css/vendor.css')
     .styles([
         "resources/assets/theme/bootstrap/css/bootstrap.css",
@@ -41,6 +42,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .scripts(['node_modules/jquery/dist/jquery.js',
         'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
         'node_modules/slick-carousel/slick/slick.js',
+        'node_modules/summernote/dist/summernote.js',
         "resources/assets/theme/js/theme/imagesloaded.js",
         "resources/assets/theme/js/theme/materialize.min.js",
         "resources/assets/theme/js/theme/menuzord.js",

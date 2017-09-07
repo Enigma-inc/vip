@@ -32,6 +32,7 @@
         "path": "^0.12.7",
         "rimraf": "^2.6.1",
         "slick-carousel": "^1.6.0",
+        "summernote": "^0.8.7",
         "through2": "^2.0.3",
         "toastr": "^2.1.2",
         "vue-carousel-3d": "^0.1.18",

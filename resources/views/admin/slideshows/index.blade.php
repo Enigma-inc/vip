@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 @section('content')
 <div class="container">
     <div class="row">
@@ -8,9 +8,9 @@
             <div class="panel">
                 <div class="panel-heading">slideshows</div>
             <div class="panel-body">
-    @foreach($slideshows as $slideshow)  
+    @foreach($slideshows as $slideshow)
         <div class="col-md-6 profile margin-top-5" >
-                  
+
             <div class="panel  panel-primary bordered" style="height:470px;">
                 <div class="panel-heading">
                     <div class="header">{{$slideshow->title}}</div>
@@ -36,7 +36,7 @@
                     </div>
                     <hr>
                      <div class="details-container">
-                        <div class="mentor-info">{{$slideshow->description}}</div>
+                        <div class="mentor-info">{!!$slideshow->description!!}</div>
                     </div>
                     <hr>
                     <div class="row">
@@ -50,12 +50,12 @@
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
-      @endforeach 
+      @endforeach
       </div>
       </div>
-      </div>      
+      </div>
     </div>
     <div class="row text-center">
         {{$slideshows->links()}}
