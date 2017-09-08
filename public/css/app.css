@@ -403,3 +403,22 @@ div.required label:after {
   background: #ab0d0d;
 }
 
+.admin-home-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.admin-home-page h2 {
+  padding: 50px;
+  text-align: center;
+  background: #da1111;
+}
+
+.admin-home-page h2 a {
+  color: #fff;
+  text-decoration: none;
+}
+

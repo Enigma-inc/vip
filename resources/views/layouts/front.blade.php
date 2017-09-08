@@ -51,16 +51,16 @@
 
                 <!--mega menu start-->
                 <ul class="menuzord-menu pull-right light">
-                    <li class="active">
+                    <li class="{{ Request::path() == '/' ? 'active' : '' }}">
                         <a href="{{route('pages.home')}}">Home</a>
                     </li>
-                    <li>
+                    <li {{ Request::is('about') ? ' class=active' : null }}>
                         <a href="{{route('pages.about')}}">About</a>
                     </li>
-                    <li>
+                    <li {{ Request::is('mentors') ? ' class=active' : null }}>
                         <a href="{{route('pages.mentors')}}">Mentors</a>
                     </li>
-                    <li>
+                    <li {{ Request::is('startups') ? ' class=active' : null }}>
                         <a href="{{route('pages.startups')}}">Startups</a>
                     </li>
                 </ul>
@@ -117,7 +117,7 @@
 
     </div>
 
- 
+
    <script src="{{mix('vendor/bundle.js')}}"></script>
     <script src="{{mix('js/app.js')}}"></script>
     @yield('page-script')

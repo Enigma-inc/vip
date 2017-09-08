@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Vodacom Foundation') }}</title>
 
     <!-- Styles -->
- 
+
     <link rel="stylesheet" href="{{mix('css/paper-theme.css')}}">
     <link rel="stylesheet" href="{{mix('css/vendor.css')}}">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -40,8 +40,9 @@
                     <!-- Left Side Of Navbar -->
                  @if (!Auth::guest())
                     <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications <span class="caret"></span></a>
+                        <li>
+                            <li><a href="http://portal.innovationpark.co.ls/" target="_blank">Applications Results</a></li>
+                            {{-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('application.sessions.list')}}">Cohorts</a></li>
                                 <li><a href="">Applicatants</a></li>
@@ -49,12 +50,12 @@
                                 <li class="dropdown-header">Settings</li>
                                 <li><a href="{{route('questions.list')}}">Questions</a></li>
                                 <li><a href="{{route('questions.categories.list')}}">Question Categories</a></li>
-                            </ul>
+                            </ul> --}}
                         </li>
                         <li><a href="{{ route('partner.list') }}">Partners</a></li>
                         <li><a href="{{ route('mentor.list') }}">Mentors</a></li>
                         <li><a href="{{ route('startup.list') }}">Startups</a></li>
-                        <li><a href="{{ route('slideshow.list') }}">Slide Shows</a></li>    
+                        <li><a href="{{ route('slideshow.list') }}">Slide Shows</a></li>
                     </ul>
                     @endif
 
@@ -94,7 +95,7 @@
     </div>
 
     <!-- Scripts -->
-    
+
     <script src="{{ mix('vendor/bundle.js') }}"></script>
     <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
     {{--  <script src="{{asset('vendor/summernote/summernote.min.js')}}"></script>  --}}

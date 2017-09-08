@@ -106,3 +106,17 @@
      color: #fff;
      background: darken(rgb(218, 17, 17),10%);
    }
+  .admin-home-page{
+    display: flex;
+    justify-content: space-around;
+    h2{
+      //border: 1px solid grey;
+      padding: 50px;
+      text-align: center;
+       background: rgb(218, 17, 17);
+       a{
+         color: #fff;
+          text-decoration: none;
+       }
+    }
+  }
