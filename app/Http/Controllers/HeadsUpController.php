@@ -49,19 +49,19 @@ class HeadsUpController extends Controller
      * @return Response
      */
     public function store(HeadsUpRequest $request)
-    {   
+    {
         $headsUpImage = $request->file('image');
         $headsUpImageName = str_slug($request->input('title')).'.'.$headsUpImage->getClientOriginalExtension();
-        $headsUpImagePath = "heads-up-images/".$headsUpImageName; 
-    
+        $headsUpImagePath = "heads-up-images/".$headsUpImageName;
+        $resizedHeadsUpImage = $this->resizeHeadsUpImage($headsUpImage, $headsUpImagePath);
+
         HeadsUp::create([
             'title'=>$request->input('title'),
             'url'=>$request->input('url'),
             'image_path' =>$headsUpImagePath,
-            // 'body' =>$request->input('body'), 
+            'body' =>$request->input('body'),
         ]);
-         
-         $resizedHeadsUpImage = $this->resizeHeadsUpImage($headsUpImage, $headsUpImagePath);
+
          return redirect()->route('heads-up.list');
     }
 
@@ -70,7 +70,7 @@ class HeadsUpController extends Controller
                     ->fit(400, 300)
                     ->stream()
                     ->detach();
-                    
+
         $this->disk->put($headsUpImagePath, $headsUpImageStream, 'public');
     }
 
@@ -101,7 +101,7 @@ class HeadsUpController extends Controller
         else{
             return redirect()->route('heads-up.list');
         }
-      
+
     }
 
     /**
@@ -112,7 +112,7 @@ class HeadsUpController extends Controller
      */
     public function update(HeadsUpRequest $request, HeadsUp $headsUp)
     {
-       
+
         $headsUp->title = $request->input('title');
         $headsUp->url = $request->input('url');
         // $headsUp->body = $request->input('body');
@@ -120,17 +120,17 @@ class HeadsUpController extends Controller
         {
             $headsUpImage = $request->file('image');
             $headsUpImageName = str_slug($request->input('title')).'.'.$headsUpImage->getClientOriginalExtension();
-        
-            $headsUpImagePath = "heads-up-images/".$headsUpImage; 
-            
+
+            $headsUpImagePath = "heads-up-images/".$headsUpImage;
+
             $resizedHeadsUpImage = $this->resizeHeadsUpImage($headsUpImage, $headsUpImagePath);
 
             $headsUp ->image_path = $headsUpImagePath;
         }
         $headsUp->save();
-        
+
         return redirect()->route('heads-up.list');
-       
+
     }
 
     /**

@@ -1,5 +1,5 @@
     <section>
-        <div id="headsups" class="headsup-container margin-bottom-20"> 
+        <div id="headsups" class="headsup-container margin-bottom-20">
         @foreach($headsup as $item)
                 <a target="_blank" href="{{$item->url}}">
                     <div class="headsup-container">
@@ -11,5 +11,5 @@
                     </div>
                 </a>
         @endforeach
-         </div>
+       </div>
     </section>
