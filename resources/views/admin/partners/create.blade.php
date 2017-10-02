@@ -36,7 +36,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('logo') ? ' has-error' : '' }}">
-                            <label for="logo" class="col-md-4 control-label">Logo</label>
+                          <label for="image" class="col-md-4 control-label">Logo
+                            <small>(Max Size: 500kb)</small>
+                            <br><small>(Recommended:<b>260px </b>X <b>160px</b>)
+                            </small>
+                          </label>
 
                             <div class="col-md-6">
                                 <input id="logo" type="file" class="form-control" name="logo"
@@ -57,7 +61,7 @@
                                 </button>
                             </div>
                         </div>
-                   
+
                 </div>
             </div>
         </div>

@@ -15,9 +15,11 @@ Route::get('/', 'PagesController@home')->name('pages.home');
 Route::get('/about', 'PagesController@about')->name('pages.about');
 Route::get('/mentors', 'PagesController@mentors')->name('pages.mentors');
 Route::get('/startups', 'PagesController@startups')->name('pages.startups');
-Route::get('session/{session}/apply','ApplicationController@create')->name('application.apply');
-Route::get('session/{session}/submit','ApplicationDocumentController@create')->name('application.apply.create');
-Route::post('session/{session}/submit','ApplicationDocumentController@store')->name('application.apply.store');
+Route::get('/heads-up','PagesController@headsUp')->name('pages.heads-up');
+Route::get('/heads-up/{slug}','PagesController@headsUpSingle')->name('pages.heads-up-single');
+// Route::get('session/{session}/apply','ApplicationController@create')->name('application.apply');
+// Route::get('session/{session}/submit','ApplicationDocumentController@create')->name('application.apply.create');
+// Route::post('session/{session}/submit','ApplicationDocumentController@store')->name('application.apply.store');
 
 
 
@@ -51,10 +53,10 @@ Route::prefix('admin')->group(function () {
     Route::post('question-categories','QuestionCategoryController@store')->name('questions.categories.store');
 
     //Application Questions
-    Route::get('questions','ApplicationQuestionController@index')->name('questions.list');    
-    Route::get('api/questions','ApplicationQuestionController@getQuestions');    
-    Route::get('questions/create','ApplicationQuestionController@create')->name('questions.create');    
-    Route::post('questions','ApplicationQuestionController@store')->name('questions.store');    
+    Route::get('questions','ApplicationQuestionController@index')->name('questions.list');
+    Route::get('api/questions','ApplicationQuestionController@getQuestions');
+    Route::get('questions/create','ApplicationQuestionController@create')->name('questions.create');
+    Route::post('questions','ApplicationQuestionController@store')->name('questions.store');
 
         //Mentors routes
     Route::get('mentors',[
@@ -107,8 +109,8 @@ Route::prefix('admin')->group(function () {
         'uses'=>'StartupController@destroy',
         'as'=>'startup.delete'
     ]);
-  
-    
+
+
         //Slideshows routes
     Route::get('slideshows',[
         'uses' => 'SlideshowController@index',

@@ -20,13 +20,13 @@ class MentorRequest extends FormRequest
      * Get the validation rules that apply to the request.
      *
      * @return array
-     */ 
+     */
     public function rules()
     {
         return [
             'name' => 'required',
             'bio' => 'required',
-            'mentor-image'=>'required', 
+            'mentor-image'=>'required|mimes:jpeg,png|max:500', 
         ];
     }
 }

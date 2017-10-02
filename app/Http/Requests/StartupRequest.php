@@ -27,7 +27,7 @@ class StartupRequest extends FormRequest
             'name' => 'required|max:255',
             'about' => 'required',
             'web_link' => 'required',
-            'logo' => 'required'
+            'logo' => 'required|mimes:jpeg,png|max:500'
         ];
     }
 }

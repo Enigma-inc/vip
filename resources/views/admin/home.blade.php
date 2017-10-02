@@ -17,5 +17,10 @@
                  <a href="{{route('startup.list')}}">Startups</a>
                </h2>
           </div>
+          <div class="row admin-home-page margin-bottom-50">
+               <h2 class="col-xs-12 col-sm-3 ">
+                 <a href="{{route('heads-up.list')}}">Heads up</a>
+               </h2>
+          </div>
     </div>
 @endsection

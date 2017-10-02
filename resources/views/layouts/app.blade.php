@@ -41,7 +41,7 @@
                  @if (!Auth::guest())
                     <ul class="nav navbar-nav">
                         <li>
-                            <li><a href="http://portal.innovationpark.co.ls/" target="_blank">Applications Results</a></li>
+                            <li><a href="http://portal.innovationpark.co.ls/" target="_blank">Applications</a></li>
                             {{-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('application.sessions.list')}}">Cohorts</a></li>
@@ -55,7 +55,8 @@
                         <li><a href="{{ route('partner.list') }}">Partners</a></li>
                         <li><a href="{{ route('mentor.list') }}">Mentors</a></li>
                         <li><a href="{{ route('startup.list') }}">Startups</a></li>
-                        <li><a href="{{ route('slideshow.list') }}">Slide Shows</a></li>
+                        <li><a href="{{ route('slideshow.list') }}">Sliders</a></li>
+                        <li><a href="{{ route('heads-up.list') }}">Heads up</a></li>
                     </ul>
                     @endif
 

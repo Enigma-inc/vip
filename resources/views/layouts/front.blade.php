@@ -31,7 +31,7 @@
 </head>
 
 <body id="top">
-  <a href="{{route('pages.home')}}">  <img class="logo-rhomby" src="{{asset('img/logo-rhomby.png')}}" alt="" /></a>
+   <img class="logo-rhomby" src="{{asset('img/logo-rhomby.png')}}" alt="" />
     <div id="app">
         <!--inject:header:html-->
         <header id="header-" class="tt-nav transparent-header sticky">
@@ -62,6 +62,9 @@
                     </li>
                     <li {{ Request::is('startups') ? ' class=active' : null }}>
                         <a href="{{route('pages.startups')}}">Startups</a>
+                    </li>
+                    <li {{ Request::is('heads-up') ? ' class=active' : null }}>
+                        <a href="{{route('pages.heads-up')}}">Heads up</a>
                     </li>
                 </ul>
             </div>

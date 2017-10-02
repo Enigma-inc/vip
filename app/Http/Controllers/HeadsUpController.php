@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\HeadsUp;
 use Illuminate\Http\Request;
 use App\Http\Requests\HeadsUpRequest;
+use App\Http\Requests\HeadsUpUpdateRequest;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -60,6 +61,7 @@ class HeadsUpController extends Controller
             'url'=>$request->input('url'),
             'image_path' =>$headsUpImagePath,
             'body' =>$request->input('body'),
+            'slug'=>str_slug($request->input('title'))
         ]);
 
          return redirect()->route('heads-up.list');
@@ -80,9 +82,9 @@ class HeadsUpController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+
     }
 
     /**
@@ -110,20 +112,20 @@ class HeadsUpController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(HeadsUpRequest $request, HeadsUp $headsUp)
+    public function update(HeadsUpUpdateRequest $request, $id)
     {
-
+        $headsUp = HeadsUp::find($id);
         $headsUp->title = $request->input('title');
         $headsUp->url = $request->input('url');
-        // $headsUp->body = $request->input('body');
+        $headsUp->body = $request->input('body');
+
         if($request->hasFile('image'))
         {
             $headsUpImage = $request->file('image');
             $headsUpImageName = str_slug($request->input('title')).'.'.$headsUpImage->getClientOriginalExtension();
+            $headsUpImagePath = "heads-up-images/".$headsUpImageName;
 
-            $headsUpImagePath = "heads-up-images/".$headsUpImage;
-
-            $resizedHeadsUpImage = $this->resizeHeadsUpImage($headsUpImage, $headsUpImagePath);
+            $this->resizeHeadsUpImage($headsUpImage, $headsUpImagePath);
 
             $headsUp ->image_path = $headsUpImagePath;
         }

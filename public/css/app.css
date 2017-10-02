@@ -281,6 +281,10 @@
   background-color: #e72028 !important;
 }
 
+.text-vodacom {
+  color: #da1111 !important;
+}
+
 body {
   color: #666666;
 }
@@ -420,5 +424,21 @@ div.required label:after {
 .admin-home-page h2 a {
   color: #fff;
   text-decoration: none;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #E31F00 !important;
+  border-color: #E31F00 !important;
+  color: #fff !important;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #E31F00 !important;
 }
 

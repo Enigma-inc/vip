@@ -25,7 +25,7 @@ class PartnerRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'logo' => 'required',
+            'logo' => 'required|mimes:jpeg,png|max:500',
             'web_link' => 'required',
         ];
     }

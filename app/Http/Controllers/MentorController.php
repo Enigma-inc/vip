@@ -71,7 +71,6 @@ class MentorController extends Controller
                     ->stream()
                     ->detach();
         $this->disk->put($mentorImagePath, $imageStream, 'public');
-                        dd($imageStream);
 
     }
 
@@ -124,10 +123,10 @@ class MentorController extends Controller
 
         $mentorImagePath = "mentor-images/".$mentorImageName;
 
-        $resizedMentorImage = $this->resizementorImage($mentorImage, $mentorImagePath);
+        $this->resizementorImage($mentorImage, $mentorImagePath);
         $mentor ->image_path = $mentorImagePath;
         }
-        
+
         $mentor->save();
 
         return redirect()->route('mentor.list');

@@ -26,7 +26,7 @@ class HeadsUpRequest extends FormRequest
         return [
             'title' => 'required',
             'url' => 'required',
-            'image' => 'required',
+            'image' => 'required|mimes:jpeg,png|max:500',
             // 'body' => 'required'
         ];
     }

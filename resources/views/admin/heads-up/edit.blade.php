@@ -13,7 +13,7 @@
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                             <label for="title" class="col-md-4 control-label">Title</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                             {!! Form::text('title',null,['class' => 'form-control'])!!}
                                 @if ($errors->has('title'))
                                     <span class="help-block">
@@ -24,9 +24,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
-                            <label for="url" class="col-md-4 control-label">Heads-Up Link</label>
+                            <label for="url" class="col-md-4 control-label">Article Link</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                  {!! Form::text('url',null,['class' => 'form-control'])!!}
                                 @if ($errors->has('url'))
                                     <span class="help-block">
@@ -37,9 +37,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
-                            <label for="image" class="col-md-4 control-label">Heads-Up Image</label>
+                            <label for="image" class="col-md-4 control-label">Image <small>(Max Size: 500kb)</small> 
+                                                                         <br><small>(Recommended:<b>400px </b>X <b>300px</b>)</small></label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="image" type="file" class="form-control" name="image"
                                   accept=".jpg, .png, .jpeg">
 
@@ -50,19 +51,19 @@
                                 @endif
                             </div>
                         </div>
-                        {{--  <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                         <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                             <label for="body" class="col-md-4 control-label">Body</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                  {!! Form::textarea('body',null,['class' => 'form-control'])!!}
                                 @if ($errors->has('body'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>
-                                    </span> 
+                                    </span>
                                 @endif
                             </div>
-                        </div>  --}}
-   
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -76,4 +77,13 @@
         </div>
     </div>
 </div>
+@endsection
+@section('page-script')
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('textarea').summernote({
+            height:300,
+          });
+      });
+  </script>
 @endsection

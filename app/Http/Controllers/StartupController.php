@@ -52,7 +52,7 @@ class StartupController extends Controller
     {
         $logo = $request->file('logo');
         $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
-        $logoPath = "startup-logos/".$logoName; 
+        $logoPath = "startup-logos/".$logoName;
         Startup::create([
             'name'=>$request->input('name'),
             'about'=>$request->input('about'),
@@ -61,7 +61,6 @@ class StartupController extends Controller
         ]);
 
         $resizedLogo = $this->resizeLogo($logo, $logoPath);
-        //dd($resizedLogo);
         return redirect()->route('startup.list');
     }
 
@@ -105,17 +104,17 @@ class StartupController extends Controller
         $startup->about=$request->input('about');
         $startup->web_link=$request->input('web_link');
 
-     
+
 
         if($request->hasFile('logo')){
         $logo = $request->file('logo');
         $logoName = str_slug($request->input('name')).'.'.$logo->getClientOriginalExtension();
-        $logoPath = "startup-logos/".$logoName; 
+        $logoPath = "startup-logos/".$logoName;
         $resizedLogo = $this->resizeLogo($logo, $logoPath);
         $startup->logo_path = $logoPath;
         }
         $startup->save();
-        
+
         return redirect()->route('startup.list');
     }
 

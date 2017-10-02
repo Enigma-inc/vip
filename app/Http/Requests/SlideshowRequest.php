@@ -27,7 +27,7 @@ class SlideshowRequest extends FormRequest
             'title' => 'required|max:255',
             'description' => 'required',
          //   'button_link' => 'required',
-            'background_image' => 'required'
+            'background_image' => 'required|mimes:jpeg,png|max:500'
         ];
-    } 
+    }
 }

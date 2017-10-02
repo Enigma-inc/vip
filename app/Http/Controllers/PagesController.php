@@ -24,7 +24,7 @@ class PagesController extends Controller
          $headsup=HeadsUp::all();
 
          $slides=Slideshow::all();
-         
+
          return view('pages.home')->with([
            'partners'=>$partners,
            'mentors'=>$mentors,
@@ -51,8 +51,17 @@ class PagesController extends Controller
           'startups'=>$startups,
        ]);
      }
+     public function headsUp()
+     {
+         $headsUp = HeadsUp::latest()->paginate(6);
+        return view('pages.heads-up')->with(['headsup'=>$headsUp]);
+     }
+     public function headsUpSingle($slug)
+     {
+         $headsUp = HeadsUp::whereSlug($slug)->first();
+        return view('pages.heads-up-single')->with(['article'=>$headsUp]);
+     }
      public function admin(){
-
        return view('admin.home');
      }
 }

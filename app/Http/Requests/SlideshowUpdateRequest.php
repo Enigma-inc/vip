@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MentorEditRequest extends FormRequest
+class SlideshowUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,10 @@ class MentorEditRequest extends FormRequest
      public function rules()
      {
          return [
-             'name' => 'required',
-             'bio' => 'required',
-             'mentor-image'=>'mimes:jpeg,png|max:500', 
+             'title' => 'required|max:255',
+             'description' => 'required',
+          //   'button_link' => 'required',
+             'background_image' => 'mimes:jpeg,png|max:500'
          ];
      }
 }

@@ -49,7 +49,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('background_image') ? ' has-error' : '' }}">
-                            <label for="background_image" class="col-md-4 control-label">Background Image (1050px X 700px)</label>
+                            <label for="background_image" class="col-md-4 control-label">Background Image
+                              <small>(Max Size: 500kb)</small>
+                              <br><small>(Recommended:<b>1050px </b>X <b>700px</b>)
+                              </small>
+                            </label>
 
                             <div class="col-md-8">
                                 <input id="background_image" type="file" class="form-control" name="background_image"
