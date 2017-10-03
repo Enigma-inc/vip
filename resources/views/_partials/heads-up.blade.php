@@ -1,4 +1,4 @@
-    {{-- <section>
+    <section>
         <div id="headsups" class="headsup-container margin-bottom-20">
         @foreach($headsup as $item)
                 <a target="_blank" href="{{$item->url}}">
@@ -12,4 +12,4 @@
                 </a>
         @endforeach
        </div>
-    </section> --}}
+    </section>
