@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0aa00babe91f414fc0bbd24abc8b522d",
+    "content-hash": "986134a49b191b14b413a98189670061",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -772,6 +772,48 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "jeremykenedy/laravel-users",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeremykenedy/laravel-users.git",
+                "reference": "30302c6c8de0464181221629ba1452c899df0a7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeremykenedy/laravel-users/zipball/30302c6c8de0464181221629ba1452c899df0a7a",
+                "reference": "30302c6c8de0464181221629ba1452c899df0a7a",
+                "shasum": ""
+            },
+            "require": {
+                "laravelcollective/html": "^5.3.0",
+                "php": ">=5.6.4"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "jeremykenedy\\laravelusers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jeremykenedy",
+                    "email": "jeremykenedy@gmail.com"
+                }
+            ],
+            "description": "Laravel Users Management Package",
+            "keywords": [
+                "Users",
+                "laravel",
+                "management"
+            ],
+            "time": "2017-05-20T19:00:19+00:00"
         },
         {
             "name": "laravel/framework",

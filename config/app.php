@@ -183,6 +183,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Unisharp\Ckeditor\ServiceProvider::class,
+        jeremykenedy\laravelusers\LaravelUsersServiceProvider::class,
 
     ],
 
